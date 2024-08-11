@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Century-Gothic;
+  src: local("Century-Gothic"),
+  url('./assets/fonts/Century-Gothic.ttf') format("truetype")
+}
+body{
+    background-color: #111111;
+    font-family: Century-Gothic;
+}
+
