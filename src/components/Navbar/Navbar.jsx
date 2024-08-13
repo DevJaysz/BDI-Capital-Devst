@@ -21,10 +21,7 @@ function NavBar() {
         />
         {/* Navbar Links */}
         <ul className="hidden md:flex space-x-4  font-medium text-gray-300 uppercase">
-          <Link
-            to="/OurJourney"
-            className=" p-2 text-xs md:text-sm lg:text-base"
-          >
+          <Link to="/" className=" p-2 text-xs md:text-sm lg:text-base">
             Our Journey
           </Link>
           <Link

@@ -6,6 +6,7 @@ function Footer() {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
+            w
             <a href="" className="flex items-center">
               <img src={NavLogo} className="h-16 mr-3" alt="FlowBite Logo" />
             </a>
@@ -13,12 +14,12 @@ function Footer() {
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Resources
+                Contact Us
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <a href="https://flowbite.com/" className="hover:underline">
-                    Flowbite
+                    +123456789
                   </a>
                 </li>
                 <li>
@@ -26,7 +27,7 @@ function Footer() {
                     href="https://tailwindcss.com/"
                     className="hover:underline"
                   >
-                    Tailwind CSS
+                    info@bdi-capital.com
                   </a>
                 </li>
               </ul>
@@ -41,7 +42,7 @@ function Footer() {
                     href="https://github.com/themesberg/flowbite"
                     className="hover:underline"
                   >
-                    Github
+                    Facebook
                   </a>
                 </li>
                 <li>
@@ -49,7 +50,7 @@ function Footer() {
                     href="https://discord.gg/4eeurUVvTy"
                     className="hover:underline"
                   >
-                    Discord
+                    Instagram
                   </a>
                 </li>
               </ul>
@@ -73,7 +74,8 @@ function Footer() {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr className="my-6 border-gray-200 dark:border-gray-700 w-full" />
+
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2024{" "}

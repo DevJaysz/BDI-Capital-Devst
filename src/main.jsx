@@ -26,11 +26,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <App />,
+        element: <OurJourney />, // Set OurJourney as the landing page
       },
       {
-        path: "/OurJourney",
-        element: <OurJourney />,
+        path: "/App",
+        element: <App />,
       },
       {
         path: "/ThriveWithUs",

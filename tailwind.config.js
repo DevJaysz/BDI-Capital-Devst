@@ -11,7 +11,7 @@ export default {
         centuryGothic:['Century-Gothic']
       },
       backgroundImage:{
-        "customBG" : "url('../src//assets//background//325489479_1212154686107383_7850534301493123193_n.jpg')"
+        "customBG" : "url('../src//assets/images/BusinessSheet_Bg.jpg')"
       }
     },
   },
