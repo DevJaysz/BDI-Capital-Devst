@@ -6,7 +6,7 @@ function LetsWorkTogether() {
   return (
     <>
       <div className="text-center">
-        <h1 className="  text-2xl md:text-3xl lg:text-5xl   font-semibold text-gray-300  uppercase">
+        <h1 className="  text-2xl md:text-3xl lg:text-5xl   font-semibold text-[#F0AE4F]  uppercase">
           Let's Work Together
         </h1>
       </div>
@@ -31,8 +31,7 @@ function LetsWorkTogether() {
             icon: <SlLocationPin className="w-12 h-12" />,
             title: "Visit Us",
             description: "Visit our office HQ.",
-            contact:
-              "c/o Unit 1002, Unicorn Trade Centre, 127-131 Des Voeux Road Central, Hong Kong",
+            contact: "Des Voeux Road Central, Hong Kong",
           },
           {
             icon: <IoCallOutline className="w-12 h-12" />,

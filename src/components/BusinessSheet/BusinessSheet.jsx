@@ -8,10 +8,10 @@ function BusinessSheet() {
         <div className="grid items-center gap-8 sm:gap-20  lg:grid-cols-2">
           {/* Hero Content */}
           <div>
-            <h1 className="pb-4 text-2xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold  text-gray-300">
+            <h1 className="pb-4 text-2xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold  text-[#F0AE4F]">
               We handle the backend, so you can focus on the frontend.
             </h1>
-            <p className="pb-6 max-w-lg text-sm md:text-base font-light text-gray-500 sm:text-xl md:pb-10 lg:pb-12 text-justify">
+            <p className="pb-6 max-w-lg text-sm md:text-lg font-light text-gray-300 sm:text-xl md:pb-10 lg:pb-12 text-justify">
               BDI Capital, we take care of all the questions that keep you up at
               night, all the questions you can’t answer, and all the tasks
               you’re still figuring out how to do.

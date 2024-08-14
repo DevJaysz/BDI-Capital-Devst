@@ -17,7 +17,7 @@ function OurJourney() {
       <section className=" relative h-auto min-h-screen flex items-center m-8">
         <WhoAreWe />
       </section>
-      <section className="container relative h-auto min-h-screen mx-auto m-8 sm:px-6 lg:px-16 lg:pt-8">
+      <section className=" container  mx-auto h-auto relative min-h-screen  xs:m-8 sm:px-6 lg:px-16 lg:pt-8">
         <LetsWorkTogether />
       </section>
       <section className="min-h-screen flex items-center  justify-center ">

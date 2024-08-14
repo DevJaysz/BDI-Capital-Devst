@@ -20,10 +20,10 @@ function WhoAreWe() {
         </div>
 
         <div className="flex flex-col justify-center font-light sm:text-lg">
-          <h2 className="mb-4 mt-4 md:mt-0 text-2xl md:text-3xl lg:text-5xl  font-bold text-gray-300 uppercase">
+          <h2 className="mb-4 mt-4 md:mt-0 text-2xl md:text-3xl lg:text-5xl  font-bold text-[#F0AE4F]  uppercase">
             Get to Know Us
           </h2>
-          <p className="mb-4 text-sm md:text-base max-w-100 text-gray-500 text-justify ">
+          <p className="mb-4 text-sm md:text-base max-w-100 text-gray-300 text-justify ">
             We believe in lowering the fail rate of startups and growing
             businesses by providing them with the right tools, resources, and
             guidance. Our mission is to foster innovation and sustainable growth

@@ -58,7 +58,7 @@ function Footer() {
         <div className="flex items-center justify-center">
           <span className="text-sm text-gray-500 dark:text-gray-400">
             © 2024{" "}
-            <a href="https://flowbite.com/" className="hover:underline">
+            <a href="" className="hover:underline">
               BDI Capital
             </a>
             . All Rights Reserved.
