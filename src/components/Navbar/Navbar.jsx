@@ -20,32 +20,23 @@ function NavBar() {
           alt=""
         />
         {/* Navbar Links */}
-        <ul className="hidden md:flex space-x-4  font-medium text-gray-300 uppercase">
+        <ul className="hidden md:flex space-x-4  font-medium text-gray-300 uppercase items-center">
           <Link to="/" className=" p-2 text-xs md:text-sm lg:text-base">
             Our Journey
           </Link>
-          <Link
-            to="/ThriveWithUs"
-            className=" p-2 text-xs md:text-sm lg:text-base"
-          >
+          <Link to="/ThriveWithUs" className=" p-2 text-xs lg:text-base">
             Thrive with us
           </Link>
-          <Link
-            to="/WhatWeOffer"
-            className=" p-2 text-xs md:text-sm lg:text-base"
-          >
+          <Link to="/WhatWeOffer" className=" p-2 text-xs lg:text-base">
             What we Offer
           </Link>
-          <Link
-            to="/OurPeople"
-            className=" p-2 text-xs md:text-sm lg:text-base"
-          >
+          <Link to="/OurPeople" className=" p-2 text-xs lg:text-base">
             Our People
           </Link>
-          <li className=" p-2 text-xs md:text-sm lg:text-base"></li>
+          <li className=" p-2 text-xs lg:text-base"></li>
         </ul>
         {/* Navbar Button */}
-        <button className="hidden md:flex items-center text-xs md:text-sm lg:text-base space-x-2  text-gray-300 uppercase ">
+        <button className="hidden md:flex items-center text-xs lg:text-base space-x-2  text-gray-300 uppercase ">
           <BsFillTelephoneFill />
           <span>Contact us</span>
         </button>

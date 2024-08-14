@@ -8,24 +8,24 @@ import WhoAreWe from "../components/WhoAreWe/WhoAreWe";
 function OurJourney() {
   return (
     <>
-      <div className="relative min-h-screen flex flex-col items-center justify-start bg-[#111111] text-white px-4 pt-24">
+      <section className="relative h-auto min-h-screen flex flex-col items-center justify-start m-8 mt-24">
         <TypeWriter />
-      </div>
-      <div className="relative flex flex-col items-center justify-center min-h-screen  p-8 text-gray-500 sm:text-lg dark:text-gray-400 ">
+      </section>
+      <section className="relative h-auto min-h-screen flex flex-col items-center justify-center  m-8">
         <BusinessSheet />
-      </div>
-      <div className="min-h-screen flex items-center">
+      </section>
+      <section className=" relative h-auto min-h-screen flex items-center m-8">
         <WhoAreWe />
-      </div>
-      <div>
+      </section>
+      <section className="container relative h-auto min-h-screen mx-auto m-8 sm:px-6 lg:px-8">
         <LetsWorkTogether />
-      </div>
-      <div className="min-h-screen text-gray-300 ">
+      </section>
+      <section className="min-h-screen flex items-center  justify-center ">
         <TrackRecord />
-      </div>
-      <div>
+      </section>
+      <section>
         <Testimonial />
-      </div>
+      </section>
     </>
   );
 }
