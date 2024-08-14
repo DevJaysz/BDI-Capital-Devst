@@ -5,8 +5,9 @@ function TrackRecord() {
         <h2 className="text-center text-2xl md:text-3xl lg:text-5xl font-bold text-gray-300 mb-6 md:mb-8">
           OUR TRACK RECORD
         </h2>
-        <p className="m-8 md:mx-auto max-w-lg text-center text-sm text-gray-500 sm:text-base md:mb-6">
-          BDI CAPITAL HAS SUCCESSFULLY CLOSED $107.5 MILLION IN FUNDRAISING
+        <p className="m-8 md:mx-auto max-w-lg text-center text-sm text-gray-400 sm:text-base md:mb-6">
+          BDI CAPITAL HAS SUCCESSFULLY CLOSED{" "}
+          <span className="font-bold">$107.5 MILLION </span> IN FUNDRAISING
           TRANSACTIONS FOR ITS CLIENTS.
         </p>
 

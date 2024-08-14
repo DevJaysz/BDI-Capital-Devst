@@ -23,7 +23,7 @@ function LetsWorkTogether() {
         {[
           {
             icon: <TiMessages className="w-12 h-12" />,
-            title: "Chat to Sales",
+            title: "Talk to Us",
             description: "Speak to our friendly team.",
             contact: "info@bdi-capital.com",
           },

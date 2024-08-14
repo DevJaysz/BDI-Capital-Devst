@@ -23,7 +23,7 @@ function WhoAreWe() {
           <h2 className="mb-4 mt-4 md:mt-0 text-2xl md:text-3xl lg:text-5xl  font-bold text-gray-300 uppercase">
             Get to Know Us
           </h2>
-          <p className="mb-4 text-sm md:text-base text-gray-500  text-justify">
+          <p className="mb-4 text-sm md:text-base max-w-100 text-gray-500 text-justify ">
             We believe in lowering the fail rate of startups and growing
             businesses by providing them with the right tools, resources, and
             guidance. Our mission is to foster innovation and sustainable growth
