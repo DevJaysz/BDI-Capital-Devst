@@ -11,8 +11,8 @@ function NavBar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 border-b shadow-slate-50 bg-[#111111]  text-gray-300 ">
-      <div className="flex justify-between items-center h-16 lg:h-20 md:h-16 max-w-[1240px] mx-auto px-4">
+    <nav className="sticky top-0 z-50  border-b shadow-slate-50 bg-[#111111]  text-gray-300 ">
+      <div className="container mx-auto flex justify-between items-center h-16 lg:h-20 md:h-16 px-4">
         {/* Navbar Logo */}
         <img
           src={NavLogo}
@@ -33,7 +33,7 @@ function NavBar() {
           <Link to="/OurPeople" className=" p-2 text-xs lg:text-base">
             Our People
           </Link>
-          <li className=" p-2 text-xs lg:text-base"></li>
+         
         </ul>
         {/* Navbar Button */}
         <button className="hidden md:flex items-center text-xs lg:text-base space-x-2  text-gray-300 uppercase ">

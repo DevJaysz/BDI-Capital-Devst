@@ -8,16 +8,16 @@ import WhoAreWe from "../components/WhoAreWe/WhoAreWe";
 function OurJourney() {
   return (
     <>
-      <section className="flex flex-col items-center justify-center h-screen min-h-screen  mx-8 -mt-24  md:-mt-36  lg:-mt-44 xl:-mt-56">
+      <section className=" container mx-auto  flex flex-col items-center justify-center h-screen min-h-screen px-8 -mt-24  md:-mt-36  lg:-mt-44 xl:-mt-56">
         <TypeWriter />
       </section>
-      <section className=" flex flex-col items-center justify-center h-auto min-h-screen  mx-8">
+      <section className="  container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen  px-8">
         <BusinessSheet />
       </section>
-      <section className="flex flex-col  items-center justify-center   h-auto min-h-screen mx-8">
+      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen  px-8">
         <WhoAreWe />
       </section>
-      <section className="flex flex-col  items-center justify-center   h-auto min-h-screen mx-8">
+      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen  px-8">
         <LetsWorkTogether />
       </section>
       <section className="flex flex-col  items-center justify-center   h-auto min-h-screen mx-8">

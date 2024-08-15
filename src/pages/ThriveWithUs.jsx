@@ -1,8 +1,13 @@
+import BuildingTomorrow from "../components/BuildingTomorrow/BuildingTomorrow";
+
 function ThriveWithUs() {
   return (
-    <div className="text-white">
-      <h2>Thrive With Us</h2>
+    <>
+      <div className="text-white">
+      <BuildingTomorrow/>
     </div>
+    </>
+    
   );
 }
 
