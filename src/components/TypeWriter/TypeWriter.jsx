@@ -1,6 +1,10 @@
 import NavLogo from "../../assets/images/NavBar_Logo.png";
 import { FaMicrophone, FaSearch } from "react-icons/fa";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+import { ReactTyped } from "react-typed";
+
+
+
 
 function TypeWriter() {
   return (
@@ -8,7 +12,7 @@ function TypeWriter() {
       <img
         src={NavLogo}
         alt="Logo"
-        className="w-48 sm:w-64 md:w-80 lg:w-96 pb-4"
+        className="w-48 md:w-80 lg:w-96 pb-4"
       />
 
       <div className="relative w-full max-w-lg mb-4 text-gray-300">
@@ -19,13 +23,13 @@ function TypeWriter() {
       </div>
 
       <div className=" text-gray-300 uppercase text-center space-y-3">
-        <h2 className="text-lg md:text-2xl lg:text-3xl">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl ">
           need all the answers?
         </h2>
-        <h2 className="text-lg md:text-2xl lg:text-3xl">
+        <h2 className="text-2xl md:text-2xl lg:text-3xl">
           you're in the right place
         </h2>
-        <div className="flex justify-center text-3xl md:text-5xl lg:text-6xl animate-slow-bounce cursor-pointer">
+        <div className="flex justify-center text-5xl md:text-5xl lg:text-6xl animate-slow-bounce cursor-pointer">
           <MdKeyboardDoubleArrowDown />
         </div>
       </div>
