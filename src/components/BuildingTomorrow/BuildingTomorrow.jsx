@@ -1,61 +1,75 @@
-import React from 'react'
+import React from 'react';
+import { TbBulb } from "react-icons/tb";
+import { SiCloudfoundry } from "react-icons/si";
+import { GiGrowth } from "react-icons/gi";
+import { FaHandsHoldingCircle } from "react-icons/fa6";
+import { GiImpactPoint } from "react-icons/gi";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+
+
+
+
 
 function BuildingTomorrow() {
+  const features = [
+    {
+      icon: <TbBulb className="w-8 h-8 text-gray-300" />,
+      title: 'INNOVATION',
+      description: 'Creating new solutions that disrupt and advance traditional methods.',
+    },
+    {
+      icon: <SiCloudfoundry className="w-8 h-8 text-gray-300" />,
+      title: 'INCEPTION',
+      description: 'The stage where ideas and strats are first developed and outlined.',
+    },
+    {
+      icon: <GiGrowth className="w-8 h-8 text-gray-300" />,
+      title: 'INVESTMENT',
+      description: 'Allocating capital to fuel growth and expand business capabilities.',
+    },
+    {
+      icon: <FaHandsHoldingCircle className="w-8 h-8 text-gray-300" />,
+      title: 'IPO',
+      description: 'Investment by offering shares to the public for the first time.',
+    },
+    {
+      icon: <GiImpactPoint className="w-8 h-8 text-gray-300" />,
+      title: 'IMPACT',
+      description: 'Positive effect a business has on its industry, society, and environment.',
+    },
+  ];
+
   return (
-  <section className="container mx-auto flex flex-col items-center justify-center h-auto min-h-screen  -mt-24 md:-mt-36 lg:-mt-44 xl:-mt-56">
-  <div className=" text-center">
-    <h2 className="text-3xl font-bold text-primary">BUILDING TOMORROW WITH</h2>
-    <h3 className="text-4xl font-extrabold text-primary mt-4">FEARLESS ENTREPRENEURS</h3>
-    <p className="text-muted-foreground mt-2">
-      There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.
-    </p>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mt-10">
-      {[
-        {
-          imgSrc: "https://openui.fly.dev/openui/100x100.svg?text=👤",
-          title: "INNOVATION",
-          description: "Cutting-edge solutions that redefine what's possible and unlock new growth.",
-        },
-        {
-          imgSrc: "https://openui.fly.dev/openui/100x100.svg?text=💬",
-          title: "INCEPTION",
-          description: "Ideas that spark change and set the foundation for future success.",
-        },
-        {
-          imgSrc: "https://openui.fly.dev/openui/100x100.svg?text=📋",
-          title: "INVESTMENT",
-          description: "This description highlights the role of investment in supporting growth and achieving goals.",
-        },
-        {
-          imgSrc: "https://openui.fly.dev/openui/100x100.svg?text=⏰",
-          title: "IPO",
-          description: "This highlights the significance of an IPO in transitioning a company to the public market.",
-        },
-        {
-          imgSrc: "https://openui.fly.dev/openui/100x100.svg?text=⏰",
-          title: "IMPACT",
-          description: "This emphasizes the focus on creating significant and positive outcomes.",
-        },
-      ].map(({ imgSrc, title, description }) => (
-        <div
-          key={title}
-          className="bg-card p-6 rounded-lg shadow-lg flex flex-col items-center w-full"
-        >
-          <img
-            alt={title}
-            src={imgSrc}
-            className="w-16 h-16 mb-4 mx-auto"
-          />
-          <h4 className="text-lg font-semibold text-primary">{title}</h4>
-          <p className="text-muted-foreground mt-2">{description}</p>
-        </div>
-      ))}
+    <div className="text-white">
+      <div className="flex flex-col items-center justify-center text-center gap-4 pb-6">
+        {/* Title */}
+        <h2 className="text-2xl md:text-7xl lg:text-6xl font-semibold lg:mb-4">
+          BUILDING TOMORROW WITH
+        </h2>
+        <h2 className="text-2xl md:text-7xl lg:text-6xl font-semibold text-[#F0AE4F] lg:mb-8">
+          FEARLESS ENTREPRENEURS
+        </h2>
+      </div>
+      <div className="flex flex-col gap-3 md:flex-row lg:flex-row">
+  {features.map((feature, index) => (
+    <div
+      key={index}
+      className={`flex flex-row items-start gap-3 p-4 lg:p-2 w-full md:w-1/2 lg:w-1/4 ${index < features.length - 1 ? 'lg:border-r border-gray-600 pr-4' : ''}`}
+    >
+      <div className="flex-shrink-0">{feature.icon}</div>
+      <div className="flex flex-col ">
+        <h3 className="text-sm text-gray-300 mb-2">{feature.title}</h3>
+        <p className="text-gray-500 text-xs">{feature.description}</p>
+      </div>
     </div>
-  </div>
-</section>
+  ))}
+</div>
 
-  )
+      <div className="hidden lg:flex justify-center text-5xl lg:text-8xl animate-slow-bounce cursor-pointer  mt-12">
+          <MdKeyboardDoubleArrowDown />
+        </div>
+    </div>
+  );
 }
 
-export default BuildingTomorrow
+export default BuildingTomorrow;

@@ -8,22 +8,27 @@ import WhoAreWe from "../components/WhoAreWe/WhoAreWe";
 function OurJourney() {
   return (
     <>
-      <section className=" container mx-auto  flex flex-col items-center justify-center h-screen min-h-screen px-8 -mt-24  md:-mt-36  lg:-mt-44 xl:-mt-56">
+      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 -mt-16 lg:-mt-20   ">
         <TypeWriter />
       </section>
+      <hr className="  dark:border-gray-700 w-full" />
       <section className="  container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen  px-8">
         <BusinessSheet />
       </section>
+      <hr className="  dark:border-gray-700 w-full" />
       <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen  px-8">
         <WhoAreWe />
       </section>
+      <hr className="  dark:border-gray-700 w-full" />
       <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen  px-8">
         <LetsWorkTogether />
       </section>
-      <section className="flex flex-col  items-center justify-center   h-auto min-h-screen mx-8">
+      <hr className="  dark:border-gray-700 w-full" />
+      <section className=" container mx-auto flex flex-col  items-center justify-center   h-auto min-h-screen px-8">
         <TrackRecord />
       </section>
-      <section className="flex flex-col  items-center justify-center   h-auto min-h-screen mx-8">
+      <hr className="  dark:border-gray-700 w-full" />
+      <section className=" container mx-auto  flex flex-col  items-center justify-center   h-auto min-h-screen px-8">
         <Testimonial />
       </section>
     </>
