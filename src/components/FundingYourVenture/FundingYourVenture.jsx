@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function FundingYourVenture() {
   return (
@@ -9,13 +9,15 @@ function FundingYourVenture() {
         <div className="flex flex-col-reverse items-start gap-8 sm:gap-20 lg:flex-row-reverse lg:items-center">
           <div className="lg:w-1/2">
             <h2 className="mb-4  max-w-xl text-3xl md:text-5xl  font-semibold text-[#F0AE4F] ">
-            FUELING YOUR STARTUP
+              FUELING YOUR STARTUP
             </h2>
             <p className="mb-6 max-w-xl text-sm font-light text-gray-300 sm:text-base md:mb-10 lg:mb-12 text-justify">
-            Our seed investment ranges from $20,000 to $500,000, designed to provide the essential financial support needed for early-stage growth and development.
+              Our seed investment ranges from $20,000 to $500,000, designed to
+              provide the essential financial support needed for early-stage
+              growth and development.
             </p>
             <p className="mb-6 max-w-lg text-sm font-light text-gray-300 sm:text-base md:mb-10 lg:mb-12 text-justify">
-            Would you like to grow with us?
+              Would you like to grow with us?
             </p>
             <a
               href="#"
@@ -33,7 +35,7 @@ function FundingYourVenture() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default FundingYourVenture
+export default FundingYourVenture;

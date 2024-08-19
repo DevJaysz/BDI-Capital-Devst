@@ -1,9 +1,9 @@
-import BusinessSheet from "../components/BusinessSheet/BusinessSheet";
-import LetsWorkTogether from "../components/LetsWorkTogether/LetsWorkTogether";
-import Testimonial from "../components/Testimonials/Testimonial";
-import TrackRecord from "../components/TrackRecord/TrackRecord";
-import TypeWriter from "../components/TypeWriter/TypeWriter";
-import WhoAreWe from "../components/WhoAreWe/WhoAreWe";
+import BusinessSheet from "./sections/OurJourney/BusinessSheet";
+import LetsWorkTogether from "./sections/OurJourney/LetsWorkTogether";
+import Testimonial from "./sections/OurJourney/Testimonial";
+import TrackRecord from "./sections/OurJourney/TrackRecord";
+import TypeWriter from "./sections/OurJourney/TypeWriter";
+import WhoAreWe from "./sections/OurJourney/WhoAreWe";
 
 function OurJourney() {
   return (
