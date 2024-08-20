@@ -1,26 +1,38 @@
-import Business from "../../../assets/images/WhoAreWe.jpg";
+import PictureLeft from "../../../assets/images/office-long-1-left.png";
+import PictureRight from "../../../assets/images/office-long-1-right.png/";
 import { RiArrowRightWideFill } from "react-icons/ri";
 
 function WhoAreWe() {
   return (
     <>
-      <div className="flex flex-col-reverse items-start gap-4  lg:flex-row-reverse lg:items-center">
-        <div className="lg:w-1/2">
-          <h2 className="mb-4 max-w-3xl text-3xl md:text-7xl font-semibold text-[#F0AE4F] uppercase">
+      <div className="gap-4 items-center mx-auto max-w-screen-xl  md:grid md:grid-cols lg:gap-8 lg:grid lg:grid-cols-2">
+        <div className="grid grid-cols-2 gap-2  md:pt-0 justify-center ">
+          <img
+            className="w-full md:w-96 rounded-lg"
+            src={PictureLeft}
+            alt="office content 1"
+          />
+          <img
+            className="mt-4 w-full  md:w-96  lg:mt-10 rounded-lg"
+            src={PictureRight}
+            alt="office content 2"
+          />
+        </div>
+
+        <div className="flex flex-col justify-center font-light sm:text-lg">
+          <h2 className="mb-4 mt-4 md:mt-0 text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-bold text-[#F0AE4F] uppercase">
             Who are we?
           </h2>
-          <p className="mb-6 max-w-lg text-sm font-light text-gray-300 sm:text-base md:mb-10 lg:mb-12 text-justify">
+
+          <p className="text-sm md:text-base lg:text-lg  max-w-full text-gray-300 text-justify ">
             We believe in lowering the fail rate of startups and growing
-            businesses by providing them with the right tools, resources, and
-            guidance. Our mission is to foster innovation and sustainable growth
-            through strategic support and mentorship. By offering a
-            comprehensive range of services tailored to the unique needs of each
-            business, we help entrepreneurs navigate the complexities of their
-            industries. From initial idea validation to scaling operations, our
-            team of experienced professionals is dedicated to empowering
-            businesses at every stage of their journey
+            businesses by offering innovative solutions and tailored support.
+            Our mission is to empower entrepreneurs with the resources,
+            mentorship, and strategic guidance they need to navigate challenges,
+            seize opportunities, and achieve sustainable growth.
           </p>
-          <div className="flex flex-col gap-4 mt-5">
+
+          <div className="flex flex-col gap-4 mt-5 ">
             {["OUR TRACK RECORD", "OUR INVESTMENTS", "OUR CLIENTS SAY"].map(
               (text) => (
                 <button
@@ -33,9 +45,6 @@ function WhoAreWe() {
               )
             )}
           </div>
-        </div>
-        <div className="w-full xl:w-1/2">
-          <img src={Business} alt="office content" />
         </div>
       </div>
     </>

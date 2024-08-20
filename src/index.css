@@ -13,3 +13,27 @@ body{
   
 }
 
+.swiper-pagination .swiper-pagination-bullet {
+  background-color: #8c8c8c; /* Set the default color for pagination bullets */
+  opacity: 1; /* Ensure full opacity */
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #F0AE4F; /* Set the color for the active pagination bullet */
+}
+.swiper-button-prev,
+.swiper-button-next {
+  /* Set border width and color */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: #fff; /* Ensure the arrow icon is visible against the border */
+}
+
+
+

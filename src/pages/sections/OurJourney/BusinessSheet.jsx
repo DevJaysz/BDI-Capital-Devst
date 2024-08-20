@@ -7,7 +7,7 @@ function BusinessSheet() {
       <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-6 items-center">
         {/* Hero Content */}
         <div className="lg:pr-6">
-          <h1 className="pb-4 text-3xl md:text-3xlg:text-6xl xl:text-7xl font-bold text-[#F0AE4F]">
+          <h1 className="pb-4 text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-bold text-[#F0AE4F]">
             We handle the backend, so you can focus on the frontend.
           </h1>
           <p className="pb-6 lg:pb-10  max-w-lg text-sm md:text-base font-light text-gray-300  text-justify">

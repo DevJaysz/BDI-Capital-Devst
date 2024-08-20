@@ -19,7 +19,7 @@ function TypeWriter() {
 
   return (
     <>
-      <img src={NavLogo} alt="Logo" className="w-48 md:w-80 lg:w-96 pb-4" />
+      <img src={NavLogo} alt="Logo" className="w-48 md:w-80 lg:w-96" />
 
       <div className="w-full md:max-w-md lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl  text-gray-300">
         <div className="flex items-center justify-between px-4 py-2 h-10 md:h-12 lg:h-12 2xl:h-14 rounded-full border-2 border-gray-300">
