@@ -1,8 +1,8 @@
-import BuildingTomorrow from "../components/BuildingTomorrow/BuildingTomorrow";
-import FundingYourVenture from "../components/FundingYourVenture/FundingYourVenture";
-import HowDoWeInvest from "../components/HowDoWeInvest/HowDoWeInvest";
-import OurApproach from "../components/OurApproach/OurApproach";
-import TalktoUs from "../components/TalkToUs/TalktoUs";
+import BuildingTomorrow from "./sections/ThriveWithUs/BuildingTomorrow";
+import FundingYourVenture from "./sections/ThriveWithUs/FundingYourVenture";
+import HowDoWeInvest from "./sections/ThriveWithUs/HowDoWeInvest";
+import OurApproach from "./sections/ThriveWithUs/OurApproach";
+import TalktoUs from "./sections/ThriveWithUs/TalktoUs";
 
 function ThriveWithUs() {
   return (

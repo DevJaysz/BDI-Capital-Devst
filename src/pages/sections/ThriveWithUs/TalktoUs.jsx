@@ -3,7 +3,7 @@ import React from "react";
 function TalktoUs() {
   return (
     <div className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
-      <h2 className="max-w-2xl mx-auto text-2xl font-semibold tracking-tight text-gray-800 xl:text-3xl dark:text-white uppercase">
+      <h2 className="max-w-5xl mx-auto text-2xl xl:text-5xl  font-semibold tracking-tight text-gray-300 uppercase ">
         Bring your Business to the{" "}
         <span className="text-[#F0AE4F]">next level.</span>
       </h2>

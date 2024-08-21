@@ -10,7 +10,7 @@ function TypeWriter() {
       "How do I secure funding?",
       "What is finance?",
       "What is compliance?",
-      "How do I Exit?",
+      "How do I exit?",
     ],
     loop: {},
     typeSpeed: 20,
