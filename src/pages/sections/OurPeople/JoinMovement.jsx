@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function JoinMovement() {
   return (
@@ -18,18 +19,18 @@ function JoinMovement() {
       </p>
 
       <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
-        <a
-          href="#"
+        <Link
+          to="/ContactUs"
           className=" items-center justify-center px-12 py-2 rounded-lg border text-gray-300 hover:bg-white hover:text-black transition duration-300"
         >
           Talk to us
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          to="/Mentor"
           className=" items-center justify-center px-6 py-2 rounded-lg border text-gray-300 hover:bg-white hover:text-black transition duration-300"
         >
           Meet our Mentors
-        </a>
+        </Link>
       </div>
     </div>
   );

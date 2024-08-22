@@ -1,4 +1,5 @@
 import JoinMovement from "./sections/OurPeople/JoinMovement";
+import OurCoreValues from "./sections/OurPeople/OurCore";
 import OurMission from "./sections/OurPeople/OurMission";
 import OurTeam from "./sections/OurPeople/OurTeam";
 
@@ -10,6 +11,9 @@ function OurPeople() {
       </section>
       <section className="container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 md:px-28 lg:px-8">
         <OurMission />
+      </section>
+      <section className="container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 md:px-28 lg:px-8">
+        <OurCoreValues />
       </section>
       <section className="container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 md:px-28 lg:px-8">
         <JoinMovement />

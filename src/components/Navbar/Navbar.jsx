@@ -1,46 +1,109 @@
 import { useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoIosMenu, IoIosClose } from "react-icons/io";
 import NavLogo from "../../assets/images/NavBar_Logo.png";
-import { Link } from "react-router-dom";
 
 function NavBar() {
   const [nav, setNav] = useState(false);
+  const location = useLocation();
   const handleNav = () => {
     setNav(!nav);
   };
 
+  // Function to check if the link is active
+  const isActive = (path) => location.pathname === path;
+
   return (
-    <nav className="sticky top-0 z-50  border-b shadow-slate-50 bg-[#111111]  text-gray-300 ">
-      <div className="container mx-auto flex justify-between items-center h-16 lg:h-20 md:h-16 px-4">
+    <nav className="sticky top-0 z-50 shadow-slate-50 bg-[#111111] text-gray-300">
+      <div className="container mx-auto flex justify-between items-center h-16 lg:h-20 px-4 ">
         {/* Navbar Logo */}
         <img
           src={NavLogo}
-          className="w-20  lg:w-32 md:w-24 hover:scale-105 transition-all cursor-pointer"
-          alt=""
+          className="w-20 lg:w-32 md:w-24 hover:scale-105 transition-all cursor-pointer"
+          alt="Nav Logo"
         />
         {/* Navbar Links */}
-        <ul className="hidden md:flex space-x-4  font-medium text-gray-300 uppercase items-center">
-          <Link to="/" className=" p-2 text-xs md:text-sm lg:text-base">
-            Our Journey
-          </Link>
-          <Link to="/ThriveWithUs" className=" p-2 text-xs lg:text-base">
-            Thrive with us
-          </Link>
-          <Link to="/WhatWeOffer" className=" p-2 text-xs lg:text-base">
-            What we Offer
-          </Link>
-          <Link to="/OurPeople" className=" p-2 text-xs lg:text-base">
-            Our People
-          </Link>
-         
+        <ul className="hidden md:flex space-x-4 font-medium text-gray-300 uppercase items-center">
+          <li className="relative group">
+            <Link
+              to="/"
+              className={`p-2 text-xs md:text-sm lg:text-base ${
+                isActive("/") ? "text-[#F0AE4F]" : "text-gray-300"
+              }`}
+            >
+              Our Journey
+              <span
+                className={`block h-0.5 bg-[#F0AE4F] absolute left-0 bottom-0 top-12 transition-all duration-300 ${
+                  isActive("/") ? "w-full" : "w-0"
+                }`}
+              ></span>
+            </Link>
+          </li>
+          <li className="relative group">
+            <Link
+              to="/ThriveWithUs"
+              className={`p-2 text-xs lg:text-base ${
+                isActive("/ThriveWithUs") ? "text-[#F0AE4F]" : "text-gray-300"
+              }`}
+            >
+              Thrive with us
+              <span
+                className={`block h-0.5 bg-[#F0AE4F] absolute left-0 bottom-0 top-12 transition-all duration-300 ${
+                  isActive("/ThriveWithUs") ? "w-full" : "w-0"
+                }`}
+              ></span>
+            </Link>
+          </li>
+          <li className="relative group">
+            <Link
+              to="/WhatWeOffer"
+              className={`p-2 text-xs lg:text-base ${
+                isActive("/WhatWeOffer") ? "text-[#F0AE4F]" : "text-gray-300"
+              }`}
+            >
+              What we Offer
+              <span
+                className={`block h-0.5 bg-[#F0AE4F] absolute left-0 bottom-0 top-12 transition-all duration-300 ${
+                  isActive("/WhatWeOffer") ? "w-full" : "w-0"
+                }`}
+              ></span>
+            </Link>
+          </li>
+          <li className="relative group">
+            <Link
+              to="/OurPeople"
+              className={`p-2 text-xs lg:text-base ${
+                isActive("/OurPeople") ? "text-[#F0AE4F]" : "text-gray-300"
+              }`}
+            >
+              Our People
+              <span
+                className={`block h-0.5 bg-[#F0AE4F] absolute left-0 bottom-0 top-12 transition-all duration-300 ${
+                  isActive("/OurPeople") ? "w-full" : "w-0"
+                }`}
+              ></span>
+            </Link>
+          </li>
         </ul>
         {/* Navbar Button */}
-        <button className="hidden md:flex items-center text-xs lg:text-base space-x-2  text-gray-300 uppercase ">
+        <Link
+          to="/ContactUs"
+          className={`hidden md:flex items-center text-xs lg:text-base space-x-2 uppercase ${
+            isActive("/ContactUs") ? "text-[#F0AE4F]" : "text-gray-300"
+          } relative group`}
+        >
           <BsFillTelephoneFill />
-          <span>Contact us</span>
-        </button>
-        {/* Mobile Menu Icon  */}
+          <span>
+            Contact us
+            <span
+              className={`block h-0.5 bg-[#F0AE4F] absolute left-0 bottom-0 top-12 transition-all duration-300 ${
+                isActive("/ContactUs") ? "w-full" : "w-0"
+              }`}
+            ></span>
+          </span>
+        </Link>
+        {/* Mobile Menu Icon */}
         <div onClick={handleNav} className="block md:hidden">
           {!nav ? <IoIosMenu size={30} /> : <IoIosClose size={30} />}
         </div>
@@ -56,19 +119,43 @@ function NavBar() {
           <img
             src={NavLogo}
             className="w-28 sm:w-32 md:w-36 lg:w-40 hover:scale-105 transition-all cursor-pointer m-4"
-            alt=""
+            alt="Nav Logo"
           />
-          <li className="p-4 text-base border-b border-gray-600">
-            Our Journey
+          <li
+            className={`p-4 text-base border-b border-gray-600 ${
+              isActive("/") ? "text-[#F0AE4F]" : "text-gray-300"
+            }`}
+          >
+            <Link to="/">Our Journey</Link>
           </li>
-          <li className="p-4 text-base border-b border-gray-600">
-            Thrive with us
+          <li
+            className={`p-4 text-base border-b border-gray-600 ${
+              isActive("/ThriveWithUs") ? "text-[#F0AE4F]" : "text-gray-300"
+            }`}
+          >
+            <Link to="/ThriveWithUs">Thrive with us</Link>
           </li>
-          <li className="p-4 text-base border-b border-gray-600">
-            What we offer
+          <li
+            className={`p-4 text-base border-b border-gray-600 ${
+              isActive("/WhatWeOffer") ? "text-[#F0AE4F]" : "text-gray-300"
+            }`}
+          >
+            <Link to="/WhatWeOffer">What we offer</Link>
           </li>
-          <li className="p-4 text-base border-b border-gray-600">Our people</li>
-          <li className="p-4 text-base">Contact us</li>
+          <li
+            className={`p-4 text-base border-b border-gray-600 ${
+              isActive("/OurPeople") ? "text-[#F0AE4F]" : "text-gray-300"
+            }`}
+          >
+            <Link to="/OurPeople">Our people</Link>
+          </li>
+          <li
+            className={`p-4 text-base ${
+              isActive("/ContactUs") ? "text-[#F0AE4F]" : "text-gray-300"
+            }`}
+          >
+            <Link to="/ContactUs">Contact us</Link>
+          </li>
         </ul>
       </div>
     </nav>

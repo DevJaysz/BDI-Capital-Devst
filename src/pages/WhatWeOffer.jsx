@@ -1,7 +1,7 @@
-import GetStarted from "../components/GetStarted/GetStarted";
-import ReadyStartUp from "../components/ReadyStartUp/ReadyStartUp";
-import TimeToExit from "../components/TimeToExit/TimeToExit";
-import YourOperations from "../components/YourOperations/YourOperations";
+import GetStarted from "../pages/sections/WhatWeOffer/GetStarted";
+import ReadyStartUp from "../pages/sections/WhatWeOffer/ReadyStartUp";
+import TimeToExit from "../pages/sections/WhatWeOffer/TimeToExit";
+import YourOperations from "../pages/sections/WhatWeOffer/YourOperations";
 
 function WhatWeOffer() {
   return (

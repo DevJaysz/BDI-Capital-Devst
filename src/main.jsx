@@ -8,6 +8,8 @@ import OurJourney from "./pages/OurJourney.jsx";
 import ThriveWithUs from "./pages/ThriveWithUs.jsx";
 import WhatWeOffer from "./pages/WhatWeOffer.jsx";
 import OurPeople from "./pages/OurPeople.jsx";
+import ContactUs from "./pages/ContactUs.jsx";
+import MeetOutMentors from "./pages/sections/OurPeople/MeetOutMentors.jsx";
 
 const Layout = () => {
   return (
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
       {
         path: "/OurPeople",
         element: <OurPeople />,
+      },
+      {
+        path: "/ContactUs",
+        element: <ContactUs />,
+      },
+      {
+        path: "/Mentor",
+        element: <MeetOutMentors />,
       },
     ],
   },
