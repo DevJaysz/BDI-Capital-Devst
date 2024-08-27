@@ -92,7 +92,7 @@ function BusinessMentorship() {
       </div>
 
       {/* Price Container */}
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
+      <div className="grid grid-cols-1 gap-2 md:gap-4 sm:grid-cols-2 md:grid-cols-3 ">
         {plans.map((plan) => (
           <div
             key={plan.id}
@@ -103,20 +103,22 @@ function BusinessMentorship() {
                 {plan.title}
               </p>
             </div>
-            <h2 className="text-3xl font-bold text-gray-300">{plan.heading}</h2>
-            <p className="flex-grow text-base font-light text-gray-400">
+            <h2 className="text-xl md:text-3xl font-bold text-gray-300">
+              {plan.heading}
+            </h2>
+            <p className="flex-grow text-sm md:text-base font-light text-gray-400">
               {plan.description}
             </p>
             <div className="flex flex-col gap-4 items-start w-full">
-              <h2 className="text-3xl font-bold md:text-5xl text-gray-300">
+              <h2 className="text-xl font-bold md:text-5xl text-gray-300">
                 <PriceAnimation price={plan.price} isVisible={isVisible} />
-                <span className="text-2xl font-bold md:text-4xl text-gray-300">
+                <span className="text-sm font-light md:text-4xl text-gray-300">
                   {plan.pricePeriod}
                 </span>
               </h2>
               <a
                 href="#"
-                className="w-full mt-4 rounded-md bg-black px-6 py-3 text-center font-semibold text-white"
+                className="w-full rounded-md bg-black px-6 py-3 text-center font-semibold text-white"
               >
                 {plan.buttonText}
               </a>

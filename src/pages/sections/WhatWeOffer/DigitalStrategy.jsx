@@ -91,10 +91,10 @@ function DigitalStrategy() {
   }, []);
 
   return (
-    <div className="max-w-7xl px-5" ref={sectionRef}>
+    <div className="max-w-7xl px-0 md:px-5" ref={sectionRef}>
       {/* Container */}
       <div className="mx-auto mb-4 max-w-3xl text-center md:mb-12 lg:mb-8">
-        <h2 className="text-3xl font-bold md:text-5xl items-start bg-gradient-to-b from-[#F0AE4F] to-gray-400 bg-clip-text text-transparent">
+        <h2 className="text-2xl font-bold md:text-5xl mt-4 md:mt-0 items-start  bg-gradient-to-b from-[#F0AE4F] to-gray-400 bg-clip-text text-transparent">
           DIGITAL STRATEGY
         </h2>
       </div>
@@ -104,21 +104,23 @@ function DigitalStrategy() {
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className="mx-auto flex w-full max-w-md flex-col items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg p-8"
+            className="mx-auto flex w-full max-w-md flex-col items-start gap-4  p-2 md:p-8 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg "
           >
-            <div className="mb-4 rounded-md bg-black px-4 py-1.5">
+            <div className="rounded-md bg-black px-4 py-1.5">
               <p className="text-sm font-bold text-white sm:text-sm">
                 {plan.title}
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold text-gray-300">{plan.heading}</h2>
-            <p className="flex-grow text-base font-light text-gray-400">
+            <h2 className="text-xl md:text-3xl  font-bold text-gray-300">
+              {plan.heading}
+            </h2>
+            <p className="flex-grow text-sm md:text-base font-light text-gray-400">
               {plan.description}
             </p>
 
             {plan.features && (
-              <ul className="mt-4 text-base text-gray-400">
+              <ul className="mt-4 text-sm md:ext-base text-gray-400">
                 {plan.features.map((feature, index) => (
                   <li key={index} className="flex items-center">
                     <span className="mr-2 inline-block w-2 h-2 bg-green-600 rounded-full"></span>
@@ -129,7 +131,7 @@ function DigitalStrategy() {
             )}
 
             <div className="flex flex-col gap-4 items-start w-full">
-              <h2 className="text-2xl font-bold md:text-4xl text-gray-300">
+              <h2 className="text-xl font-bold md:text-5xl text-gray-300">
                 <PriceAnimation price={plan.price} isVisible={isVisible} />
                 <span className="text-sm font-light sm:text-sm">
                   {plan.pricePeriod}
