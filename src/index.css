@@ -35,5 +35,21 @@ body{
   color: #fff; /* Ensure the arrow icon is visible against the border */
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform: translateY(-15px); /* Height of the bounce */
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s ease infinite; /* Adjust duration to make it faster (e.g., 2s) */
+}
+
+
+
 
 

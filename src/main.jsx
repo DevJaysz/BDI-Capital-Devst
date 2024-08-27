@@ -10,8 +10,15 @@ import WhatWeOffer from "./pages/WhatWeOffer.jsx";
 import OurPeople from "./pages/OurPeople.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import MeetOutMentors from "./pages/sections/OurPeople/MeetOutMentors.jsx";
+import Policy from "./pages/Policy.jsx";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Layout = () => {
+  useEffect(() => {
+    Aos.init(); // Initialize Aos
+  }, []);
   return (
     <div>
       <NavBar />
@@ -53,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "/Mentor",
         element: <MeetOutMentors />,
+      },
+      {
+        path: "/Policy",
+        element: <Policy />,
       },
     ],
   },

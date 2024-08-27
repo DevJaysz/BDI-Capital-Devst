@@ -7,21 +7,37 @@ function BusinessSheet() {
       <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-6 items-center">
         {/* Hero Content */}
         <div className="lg:pr-6">
-          <h1 className="pb-4 text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-bold text-[#F0AE4F]">
+          <h1
+            className="pb-4 text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-bold text-[#F0AE4F] "
+            data-aos="fade-zoom-in"
+            data-aos-duration="1000"
+          >
             We handle the backend, so you can focus on the frontend.
           </h1>
-          <p className="pb-6 lg:pb-10  max-w-lg text-sm md:text-base font-light text-gray-300  text-justify">
+          <p
+            className="pb-6 lg:pb-10  max-w-lg text-sm md:text-base font-light text-gray-300  text-justify"
+            data-aos="fade-zoom-in"
+            data-aos-duration="1200"
+          >
             At BDI Capital, we take care of all the questions that keep you up
             at night, all the questions you can’t answer, and all the tasks
             you’re still figuring out how to do.
           </p>
-          <button className="flex items-center justify-center  py-3 px-6 text-sm font-semibold rounded-lg max-w-xs border text-gray-300 hover:bg-white hover:text-black transition duration-300">
+          <button
+            className="flex items-center justify-center  py-3 px-6 text-sm font-semibold rounded-lg max-w-xs border text-gray-300 hover:bg-white hover:text-black transition duration-300"
+            data-aos="fade-zoom-in"
+            data-aos-duration="1000"
+          >
             Get Started
             <RiArrowRightWideFill className="ml-2" />
           </button>
         </div>
         {/* Hero Image */}
-        <div className="h-full w-full">
+        <div
+          className="h-full w-full "
+          data-aos="fade-left"
+          data-aos-duration="1200"
+        >
           <img
             src={AskAnExpert}
             alt="Hero"

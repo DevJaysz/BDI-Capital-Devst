@@ -32,7 +32,7 @@ const plans = [
       "Web Hosting",
       "Corporate E-Mail Address",
       "Calendars + Teleconference",
-      "Cloud Back-Up Storage (500 GB) ",
+      "Cloud Back-Up Storage(500GB)",
       "Microsoft Office 365 Access",
     ],
   },
@@ -94,13 +94,13 @@ function DigitalStrategy() {
     <div className="max-w-7xl px-0 md:px-5" ref={sectionRef}>
       {/* Container */}
       <div className="mx-auto mb-4 max-w-3xl text-center md:mb-12 lg:mb-8">
-        <h2 className="text-2xl font-bold md:text-5xl mt-4 md:mt-0 items-start  bg-gradient-to-b from-[#F0AE4F] to-gray-400 bg-clip-text text-transparent">
+        <h2 className="text-2xl font-bold md:text-5xl mt-4 md:mt-8 items-start  bg-gradient-to-b from-[#F0AE4F] to-gray-400 bg-clip-text text-transparent">
           DIGITAL STRATEGY
         </h2>
       </div>
 
       {/* Price Container */}
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-3 md:gap-4">
         {plans.map((plan) => (
           <div
             key={plan.id}
@@ -112,10 +112,10 @@ function DigitalStrategy() {
               </p>
             </div>
 
-            <h2 className="text-xl md:text-3xl  font-bold text-gray-300">
+            <h2 className="text-xl md:text-3xl lg:text-2xl font-bold text-gray-300">
               {plan.heading}
             </h2>
-            <p className="flex-grow text-sm md:text-base font-light text-gray-400">
+            <p className="flex-grow text-sm md:text-sm lg:text-sm xl:text-base font-light text-gray-400">
               {plan.description}
             </p>
 
@@ -131,16 +131,15 @@ function DigitalStrategy() {
             )}
 
             <div className="flex flex-col gap-4 items-start w-full">
-              <h2 className="text-xl font-bold md:text-5xl text-gray-300">
+              <h2 className="text-xl font-bold md:text-4xl lg:text-3xl xl:text-5xl text-gray-300">
                 <PriceAnimation price={plan.price} isVisible={isVisible} />
-                <span className="text-sm font-light sm:text-sm">
+                <span className="text-sm font-light  text-gray-300">
                   {plan.pricePeriod}
                 </span>
               </h2>
-
               <a
                 href="#"
-                className="w-full mt-4 rounded-md bg-black px-6 py-3 text-center font-semibold text-white"
+                className="w-full rounded-md border text-gray-300 px-6 py-3 text-center font-semibold "
               >
                 {plan.buttonText}
               </a>
