@@ -69,7 +69,7 @@ function Testimonial() {
       <div className="relative z-20 w-full mt-8 md:mt-12 flex flex-col items-center">
         {/* Background Box */}
         <div className="absolute inset-0 flex items-center justify-center -z-10">
-          <div className="rounded-2xl w-full max-w-4xl md:h-full lg:h-5/6 xl:h-96 sm:border sm:flex sm:items-center sm:justify-center"></div>
+          <div className="rounded-2xl border-neutral-800 bg-neutral-900/50 text-center shadow-lg w-full max-w-4xl md:h-full lg:h-5/6 xl:h-96 sm:border sm:flex sm:items-center sm:justify-center"></div>
         </div>
 
         {/* Swiper Container */}

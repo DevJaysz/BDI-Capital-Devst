@@ -4,7 +4,7 @@ function OurApproach() {
   return (
     <>
       {/* Component */}
-      <div className="flex flex-col-reverse items-center justify-center  gap-4 md:gap-10 lg:flex-row-reverse lg:gap-8">
+      <div className="flex flex-col-reverse items-center justify-center  gap-4 md:gap-10 lg:flex-row-reverse lg:gap-8 ">
         <div className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:items-start lg:justify-start lg:w-1/2 lg:text-left text-center">
           <div className="flex flex-col items-center gap-4 lg:items-start w-full max-w-3xl">
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold text-[#F0AE4F]">
