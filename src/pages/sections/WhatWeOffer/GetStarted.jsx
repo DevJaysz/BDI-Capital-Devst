@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 function GetStarted() {
   const { hash } = useLocation();
@@ -22,6 +23,14 @@ function GetStarted() {
       }
     }
   }, [hash]);
+
+  // Define scroll links and their target sections
+  const scrollLinks = {
+    "I NEED HELP TO GET STARTED": "/ReadyStartUp",
+    "I NEED HELP WITH OPERATIONS": "/Operations",
+    "I NEED HELP WITH MY EXIT": "/Exit",
+  };
+
   return (
     <>
       {/* Content */}
@@ -48,20 +57,20 @@ function GetStarted() {
         >
           WELCOME TO YOUR <span className="text-[#F0AE4F]">BUSINESS SHEET</span>
         </h1>
-        <div className="flex flex-col md:flex-row justify-evenly gap-6 pt-4 w-full text-gray-300">
-          {[
-            "I NEED HELP TO GET STARTED",
-            "I NEED HELP WITH OPERATIONS",
-            "I NEED HELP WITH MY EXIT",
-          ].map((text, index) => (
-            <button
-              key={index}
+        <div className="flex flex-col md:flex-row justify-evenly gap-6 pt-4 w-full text-gray-300 cursor-pointer">
+          {Object.entries(scrollLinks).map(([text, id]) => (
+            <ScrollLink
+              key={text}
+              to={id}
+              smooth={true}
+              duration={500}
+              offset={-150}
               className="border-2 border-white rounded-full px-4 py-2 md:px-6 md:py-3 text-sm md:text-lg w-full md:w-auto hover:bg-white hover:text-black transition duration-300"
               data-aos="fade-up"
               data-aos-duration="2500"
             >
               {text}
-            </button>
+            </ScrollLink>
           ))}
         </div>
       </div>

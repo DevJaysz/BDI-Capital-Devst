@@ -5,6 +5,7 @@ import { GiGrowth } from "react-icons/gi";
 import { FaHandsHoldingCircle } from "react-icons/fa6";
 import { GiImpactPoint } from "react-icons/gi";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+import { Link as ScrollLink } from "react-scroll";
 
 function BuildingTomorrow() {
   const features = [
@@ -83,14 +84,20 @@ function BuildingTomorrow() {
           </div>
         ))}
       </div>
-
-      <div
-        className="hidden md:flex justify-center text-5xl lg:text-8xl animate-slow-bounce cursor-pointer  mt-12 animate-bounce"
-        data-aos="fade-zoom-in"
-        data-aos-duration="1500"
+      <ScrollLink
+        to="/SeedInvestment"
+        smooth={true}
+        duration={500}
+        offset={-250}
       >
-        <MdKeyboardDoubleArrowDown />
-      </div>
+        <div
+          className="hidden md:flex justify-center text-5xl lg:text-8xl animate-slow-bounce cursor-pointer  mt-12 animate-bounce"
+          data-aos="fade-zoom-in"
+          data-aos-duration="1500"
+        >
+          <MdKeyboardDoubleArrowDown />
+        </div>
+      </ScrollLink>
     </div>
   );
 }

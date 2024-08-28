@@ -1,10 +1,12 @@
 import React from "react";
 import ReadyToStart from "../../../assets/images/ReadyToStart.jpg";
+import { Link as SmoothScroll } from "react-scroll";
+
 function ReadyStartUp() {
   return (
     <>
       {/* Container */}
-      <div className="mx-auto w-full max-w-7xl">
+      <div id="/ReadyStartUp" className="mx-auto w-full max-w-7xl">
         {/* Title */}
 
         <h2
@@ -15,7 +17,7 @@ function ReadyStartUp() {
           READY TO START YOUR <span className="text-[#F0AE4F]"> START UP?</span>
         </h2>
         <p
-          className="mx-auto mb-4 mt-4 md:mb-12 lg:mb-16 max-w-5xl text-center text-sm text-gray-300 sm:text-base "
+          className="mx-auto mb-4 mt-4 md:mb-12 lg:mb-16 max-w-5xl text-center text-sm text-gray-300 sm:text-base"
           data-aos="fade-zoom-in"
           data-aos-duration="1000"
         >
@@ -48,25 +50,30 @@ function ReadyStartUp() {
                 textColor: "text-gray-400",
               },
             ].map((item, index) => (
-              <a
+              <div
                 key={index}
-                className={`flex max-w-lg justify-center gap-2 md:p-3 `}
-                href={`#step-${item.step}`}
+                className="flex max-w-lg justify-center gap-2 md:p-3 cursor-default" // Adding cursor-default class
                 data-aos="fade-left"
                 data-aos-duration="1000"
               >
                 <div className="flex h-10 w-10 flex-none items-start justify-center rounded-full text-gray-400">
-                  <p className="text-2xl font-medium ">{item.step}</p>
+                  <p className="text-2xl font-medium">{item.step}</p>
                 </div>
-                <div className=" flex flex-col gap-2">
-                  <h5 className="text-2xl font-bold  text-gray-300">
+                <div className="flex flex-col gap-2">
+                  <SmoothScroll
+                    to="step-01" /* {`step-${item.step}`} */ //for more section array
+                    smooth={true}
+                    duration={500}
+                    offset={-170} // Adjust the offset as needed
+                    className="text-2xl font-bold text-gray-300 underline cursor-pointer"
+                  >
                     {item.title}
-                  </h5>
+                  </SmoothScroll>
                   <p className={`text-base text-justify ${item.textColor}`}>
                     {item.desc}
                   </p>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
 

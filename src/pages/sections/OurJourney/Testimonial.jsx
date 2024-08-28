@@ -61,7 +61,10 @@ const testimonials = [
 
 function Testimonial() {
   return (
-    <div className="w-full md:max-w-2xl lg:max-w-6xl flex flex-col items-center py-16">
+    <div
+      id="/Testimonials"
+      className="w-full md:max-w-2xl lg:max-w-6xl flex flex-col items-center py-16"
+    >
       <h1
         className="text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-bold text-[#F0AE4F] uppercase mb-8 text-center"
         data-aos="fade-zoom-in"

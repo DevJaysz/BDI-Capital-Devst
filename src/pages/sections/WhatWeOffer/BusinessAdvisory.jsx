@@ -85,7 +85,7 @@ function BusinessAdvisory() {
   }, []);
 
   return (
-    <div className="max-w-7xl px-0 lg:px-5" ref={sectionRef}>
+    <div id="02" className="max-w-7xl px-0 lg:px-5" ref={sectionRef}>
       {/* Container */}
       <div className="mx-auto mb-4 max-w-5xl text-center md:mb-12 lg:mb-8">
         <h2 className="text-2xl font-bold md:text-5xl items-start  bg-gradient-to-b from-[#F0AE4F] to-gray-400 bg-clip-text text-transparent">

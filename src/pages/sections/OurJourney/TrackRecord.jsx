@@ -75,6 +75,7 @@ function TrackRecord() {
 
   return (
     <div
+      id="/TrackRecord"
       ref={trackRecordRef}
       className="w-full max-w-7xl mx-auto md:px-10 md:py-20"
     >
