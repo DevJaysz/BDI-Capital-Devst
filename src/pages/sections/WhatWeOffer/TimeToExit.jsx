@@ -5,16 +5,19 @@ import { Link as SmoothScroll } from "react-scroll";
 function TimeToExit() {
   const steps = [
     {
+      step: "01",
       id: "step-04",
       title: "M&A Buyer & Seller Side",
       desc: "We help you buy or sell your business. BDI Capital has successfully closed $43.5 million in fundraising transactions for its clients.",
     },
     {
+      step: "02",
       id: "step-05",
       title: "BDI Business Community",
       desc: "We break down the barriers between you and the mentors and investors you’re trying to reach.",
     },
     {
+      step: "03",
       id: "step-06",
       title: "Wealth Management",
       desc: "We deliver thoughtful investment advisory services.",

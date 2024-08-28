@@ -93,7 +93,7 @@ function BuildingTomorrow() {
         <div className="hidden md:flex justify-center text-5xl lg:text-8xl animate-slow-bounce cursor-pointer  mt-12 animate-bounce">
           <MdKeyboardDoubleArrowDown
             data-aos="fade-zoom-in"
-            data-aos-duration="2500"
+            data-aos-duration="500"
           />
         </div>
       </ScrollLink>

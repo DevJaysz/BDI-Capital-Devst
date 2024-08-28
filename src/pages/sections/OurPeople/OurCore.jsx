@@ -42,7 +42,7 @@ function OurCoreValues() {
   return (
     <section className="text-center mx-auto">
       <h2
-        className="text-3xl md:text-6xl my-8 font-bold bg-gradient-to-b from-[#F0AE4F] to-gray-400 bg-clip-text text-transparent"
+        className="text-3xl md:text-6xl my-8 font-bold text-[#F0AE4F]"
         data-aos="fade-in-zoom"
         data-aos-duration="1000"
       >

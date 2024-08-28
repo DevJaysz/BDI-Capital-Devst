@@ -94,7 +94,7 @@ function DigitalStrategy() {
     <div id="04" className="max-w-7xl px-0 md:px-5" ref={sectionRef}>
       {/* Container */}
       <div className="mx-auto mb-4 max-w-3xl text-center md:mb-12 lg:mb-8">
-        <h2 className="text-2xl font-bold md:text-5xl mt-4 md:mt-8 items-start  bg-gradient-to-b from-[#F0AE4F] to-gray-400 bg-clip-text text-transparent">
+        <h2 className="text-2xl font-bold md:text-5xl mt-4 md:mt-8 items-start  text-[#F0AE4F]">
           DIGITAL STRATEGY
         </h2>
       </div>

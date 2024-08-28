@@ -70,7 +70,7 @@ function Testimonial() {
         data-aos="fade-zoom-in"
         data-aos-duration="1500"
       >
-        What our clients say
+        our clients say
       </h1>
 
       <div className="relative z-20 w-full mt-8 md:mt-12 flex flex-col items-center">

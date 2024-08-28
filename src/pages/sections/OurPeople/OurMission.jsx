@@ -5,7 +5,7 @@ function OurMission() {
     <section id="features" className="flex flex-col items-center ">
       <div className="flex flex-col items-center gap-12 text-center">
         <h2
-          className="text-2xl md:text-5xl font-bold bg-gradient-to-b from-[#F0AE4F] to-gray-400 bg-clip-text text-transparent"
+          className="text-2xl md:text-5xl font-bold text-[#F0AE4F]"
           data-aos="fade-in-zoom"
           data-aos-duration="1000"
         >

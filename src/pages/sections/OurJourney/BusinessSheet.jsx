@@ -39,7 +39,7 @@ function BusinessSheet() {
         <div
           className="h-full w-full "
           data-aos="fade-zoom-in"
-          data-aos-duration="1500"
+          data-aos-duration="100"
         >
           <img
             src={AskAnExpert}

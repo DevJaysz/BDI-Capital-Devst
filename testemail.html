@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BDI Capital Email</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+      }
+      .logo {
+        text-align: start;
+        margin-bottom: 20px;
+      }
+      .logo img {
+        max-width: 250px;
+      }
+      .content {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333333;
+      }
+      .footer {
+        text-align: center;
+        font-size: 12px;
+        color: #999999;
+        margin-top: 20px;
+      }
+      .footer a {
+        color: #999999;
+        text-decoration: none;
+        margin: 0 5px;
+      }
+      .social-icons {
+        margin-top: 10px;
+      }
+      .social-icons img {
+        width: 20px;
+        margin: 0 5px;
+      }
+      .content-message {
+        background-color: rgb(208, 208, 208);
+        border-radius: 15px;
+        padding: 20px;
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <!-- Header -->
+      <div class="logo">
+        <img
+          src="https://scontent.fmnl4-4.fna.fbcdn.net/v/t31.18172-8/13305114_708374275971886_7098098999278362577_o.png?_nc_cat=102&ccb=1-7&_nc_sid=53a332&_nc_ohc=dusMu2FEgdMQ7kNvgGFE0On&_nc_ht=scontent.fmnl4-4.fna&oh=00_AYCeY45D7u99UQ49xU7awwdm3m1yOdbJ2OXZxOeEP0GBQg&oe=66F6E8FC"
+          alt="BDI Capital Logo"
+        />
+      </div>
+
+      <!-- Body Content -->
+      <div class="content">
+        <p>Hi {{user_name}},</p>
+        <p>
+          Thank you for reaching out to BDI Capital. We have received your
+          message and will get back to you immediately.
+        </p>
+        <p>
+          If your inquiry is urgent, please contact us directly at (+63)
+          917-820-4369 or reply to this email for immediate assistance.
+        </p>
+        <p>Kind Regards, <br />BDI Capital team</p>
+
+        <div class="content-message">
+          <p><strong>Your Message:</strong></p>
+          <p>Name: {{user_name}}</p>
+          <p>Business: {{business_name}}</p>
+          <p>Email: {{user_email}}</p>
+          <p>Service: {{service_name}}</p>
+          <p>Contact: {{user_number}}</p>
+          <p>Message: {{message}}</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>
+          If you are not the intended recipient, please delete this email and
+          notify us immediately.
+        </p>
+        <div class="social-icons">
+          <a href="https://twitter.com/BDICapital"
+            ><img
+            src="https://react-email-demo-d99odc1fw-resend.vercel.app/static/slack-instagram.png""
+            alt="Instagram" /></a
+          >
+          <a href="https://facebook.com/BDICapital"
+            ><img
+              src="https://react-email-demo-d99odc1fw-resend.vercel.app/static/slack-facebook.png"
+              alt="Facebook"
+          /></a>
+          <a href="https://www.linkedin.com/company/bdi-capital/mycompany/"
+            ><img
+              src="https://react-email-demo-d99odc1fw-resend.vercel.app/static/slack-linkedin.png"
+              alt="LinkedIn"
+          /></a>
+        </div>
+
+        <p>
+          <a href="privacy-policy-url">Privacy Policy</a> |
+          <a href="terms-conditions-url">Terms & Conditions</a> |
+          <a href="website-url">Visit our website</a>
+        </p>
+
+        <p>
+          © 2024 BDI Capital, Hongkong | Germany | Philippines | Singapore. All
+          Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
