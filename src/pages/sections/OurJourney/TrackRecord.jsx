@@ -78,10 +78,18 @@ function TrackRecord() {
       ref={trackRecordRef}
       className="w-full max-w-7xl mx-auto md:px-10 md:py-20"
     >
-      <h2 className="text-center text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-bold text-[#F0AE4F] mb-6 md:mb-8">
+      <h2
+        className="text-center text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-bold text-[#F0AE4F] mb-6 md:mb-8"
+        data-aos="fade-zoom-in"
+        data-aos-duration="1000"
+      >
         OUR TRACK RECORD
       </h2>
-      <p className="mx-auto text-center text-sm md:text-xl text-gray-400 md:mb-6">
+      <p
+        className="mx-auto text-center text-sm md:text-xl text-gray-400 md:mb-6"
+        data-aos="fade-zoom-in"
+        data-aos-duration="1500"
+      >
         BDI CAPITAL HAS SUCCESSFULLY CLOSED{" "}
         <span className="font-bold text-gray-300">$107.5 MILLION </span> IN
         FUNDRAISING TRANSACTIONS FOR ITS CLIENTS.
@@ -92,7 +100,13 @@ function TrackRecord() {
             key={record.label}
             className="flex flex-col items-center gap-4 text-gray-300 text-center"
           >
-            <p className="text-sm">{record.label}</p>
+            <p
+              className="text-sm"
+              data-aos="fade-right"
+              data-aos-duration="1500"
+            >
+              {record.label}
+            </p>
             <h2 className="text-3xl font-bold md:text-6xl flex items-center">
               <span className="mr-1">{record.currency}</span>
               <Counter

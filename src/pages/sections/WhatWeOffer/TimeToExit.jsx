@@ -7,10 +7,18 @@ function ReadyStartUp() {
       <div className="mx-auto w-full max-w-7xl">
         {/* Title */}
 
-        <h2 className="text-center text-3xl font-bold md:text-5xl text-gray-300">
+        <h2
+          className="text-center text-3xl font-bold md:text-5xl text-gray-300"
+          data-aos="fade-zoom-in"
+          data-aos-duration="1000"
+        >
           FEEL LIKE IT'S TIME TO <span className="text-[#F0AE4F]"> EXIT?</span>
         </h2>
-        <p className="mx-auto mb-4 mt-4 md:mb-12 lg:mb-16 max-w-5xl text-center text-sm text-gray-300 sm:text-base ">
+        <p
+          className="mx-auto mb-4 mt-4 md:mb-12 lg:mb-16 max-w-5xl text-center text-sm text-gray-300 sm:text-base "
+          data-aos="fade-zoom-in"
+          data-aos-duration="1500"
+        >
           {" "}
           If you've ever dreamed of turning your passion into a thriving
           business, now is the time. Don't let fear or uncertainty hold you
@@ -44,6 +52,8 @@ function ReadyStartUp() {
                 key={index}
                 className={`flex max-w-lg  gap-2 md:p-3 `}
                 href={`#step-${item.step}`}
+                data-aos="fade-left"
+                data-aos-duration="1500"
               >
                 <div className="flex h-10 w-10 flex-none items-start justify-center rounded-full text-gray-400">
                   <p className="text-2xl font-medium ">{item.step}</p>
@@ -61,7 +71,11 @@ function ReadyStartUp() {
           </div>
 
           {/* Image */}
-          <div className="flex justify-center lg:order-first">
+          <div
+            className="flex justify-center lg:order-first"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
             <img
               alt="Placeholder"
               src={Exit}

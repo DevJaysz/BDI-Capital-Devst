@@ -27,16 +27,16 @@ function BuildingTomorrow() {
         "Allocating capital to fuel growth and expand business capabilities.",
     },
     {
-      icon: <FaHandsHoldingCircle className="w-5 h-5  text-gray-300" />,
-      title: "IPO",
-      description:
-        "Investment by offering shares to the public for the first time.",
-    },
-    {
       icon: <GiImpactPoint className="w-5 h-5 text-gray-300" />,
       title: "IMPACT",
       description:
         "Positive effect a business has on its industry, society, and environment.",
+    },
+    {
+      icon: <FaHandsHoldingCircle className="w-5 h-5  text-gray-300" />,
+      title: "IPO",
+      description:
+        "Investment by offering shares to the public for the first time.",
     },
   ];
 
@@ -44,10 +44,18 @@ function BuildingTomorrow() {
     <div className="text-white">
       <div className="flex flex-col items-center justify-center text-center gap-4 pb-6">
         {/* Title */}
-        <h2 className=" text-2xl md:text-5xl lg:text-5xl xl:text-7xl font-semibold lg:mb-4">
+        <h2
+          className=" text-2xl md:text-5xl lg:text-5xl xl:text-7xl font-semibold lg:mb-4"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           BUILDING TOMORROW WITH
         </h2>
-        <h2 className=" text-2xl md:text-5xl lg:text-5xl xl:text-7xl font-semibold text-[#F0AE4F] lg:mb-8">
+        <h2
+          className=" text-2xl md:text-5xl lg:text-5xl xl:text-7xl font-semibold text-[#F0AE4F] lg:mb-8"
+          data-aos="fade-left"
+          data-aos-duration="2000"
+        >
           FEARLESS ENTREPRENEURS
         </h2>
       </div>
@@ -60,11 +68,15 @@ function BuildingTomorrow() {
                 ? "lg:border-r :border-r-0  border-gray-600"
                 : ""
             }`}
+            data-aos="fade-zoom-in"
+            data-aos-duration="3000"
           >
             <div className="flex-shrink-0 ">{feature.icon}</div>
             <div className="flex flex-col">
-              <h3 className="text-sm text-gray-300 mb-2">{feature.title}</h3>
-              <p className="text-gray-500 text-xs md:hidden lg:flex">
+              <h3 className="text-sm xl:text-lg font-bold text-gray-300 mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-gray-400 text-xs xl:text-sm md:hidden lg:flex">
                 {feature.description}
               </p>
             </div>
@@ -72,7 +84,11 @@ function BuildingTomorrow() {
         ))}
       </div>
 
-      <div className="hidden md:flex justify-center text-5xl lg:text-8xl animate-slow-bounce cursor-pointer  mt-12">
+      <div
+        className="hidden md:flex justify-center text-5xl lg:text-8xl animate-slow-bounce cursor-pointer  mt-12 animate-bounce"
+        data-aos="fade-zoom-in"
+        data-aos-duration="1500"
+      >
         <MdKeyboardDoubleArrowDown />
       </div>
     </div>

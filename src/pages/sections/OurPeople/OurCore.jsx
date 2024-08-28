@@ -41,10 +41,18 @@ function OurCoreValues() {
 
   return (
     <section className="text-center mx-auto">
-      <h2 className="text-3xl md:text-6xl my-8 font-bold bg-gradient-to-b from-[#F0AE4F] to-gray-400 bg-clip-text text-transparent">
+      <h2
+        className="text-3xl md:text-6xl my-8 font-bold bg-gradient-to-b from-[#F0AE4F] to-gray-400 bg-clip-text text-transparent"
+        data-aos="fade-in-zoom"
+        data-aos-duration="1000"
+      >
         OUR CORE VALUES
       </h2>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        className="max-w-7xl mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+        data-aos="fade-in-zoom"
+        data-aos-duration="2000"
+      >
         {features.map((feature, index) => (
           <OurCore
             key={index}
@@ -54,7 +62,11 @@ function OurCoreValues() {
           />
         ))}
       </div>
-      <h2 className="text-3xl mt-8 text-center text-gray-300">
+      <h2
+        className="text-3xl mt-8 text-center text-gray-300"
+        data-aos="fade-up"
+        data-aos-duration="2500"
+      >
         “Our mission is to reduce startup failures and empower founders with a
         real chance at success.”
       </h2>

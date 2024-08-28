@@ -62,14 +62,22 @@ const testimonials = [
 function Testimonial() {
   return (
     <div className="w-full md:max-w-2xl lg:max-w-6xl flex flex-col items-center py-16">
-      <h1 className="text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-bold text-[#F0AE4F] uppercase mb-8 text-center">
+      <h1
+        className="text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-bold text-[#F0AE4F] uppercase mb-8 text-center"
+        data-aos="fade-zoom-in"
+        data-aos-duration="1500"
+      >
         What our clients say
       </h1>
 
       <div className="relative z-20 w-full mt-8 md:mt-12 flex flex-col items-center">
         {/* Background Box */}
         <div className="absolute inset-0 flex items-center justify-center -z-10">
-          <div className="rounded-2xl border-neutral-800 bg-neutral-900/50 text-center shadow-lg w-full max-w-4xl md:h-full lg:h-5/6 xl:h-96 sm:border sm:flex sm:items-center sm:justify-center"></div>
+          <div
+            className="rounded-2xl border-neutral-800 bg-neutral-900/50 text-center shadow-lg w-full max-w-4xl md:h-full lg:h-5/6 xl:h-96 sm:border sm:flex sm:items-center sm:justify-center"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          ></div>
         </div>
 
         {/* Swiper Container */}
@@ -91,10 +99,16 @@ function Testimonial() {
               <div className="flex flex-col items-center w-full p-6 rounded-2xl md:flex-row lg:px-12 md:p-0">
                 <img
                   className="h-24 w-24 md:h-[30rem] md:w-72 lg:h-[30rem] lg:w-[20rem] rounded-full md:rounded-2xl object-cover shadow-md"
+                  data-aos="fade-down"
+                  data-aos-duration="1000"
                   src={testimonial.image}
                   alt={`client ${index}`}
                 />
-                <div className="mt-4 md:mt-0 md:mx-6 text-center md:text-left text-white">
+                <div
+                  className="mt-4 md:mt-0 md:mx-6 text-center md:text-left text-white"
+                  data-aos="fade-zoom-in"
+                  data-aos-duration="1500"
+                >
                   <p className="text-sm md:text-base font-medium">
                     {testimonial.name}
                   </p>

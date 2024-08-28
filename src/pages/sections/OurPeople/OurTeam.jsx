@@ -43,15 +43,27 @@ function OurTeam() {
   return (
     <>
       {/* Title */}
-      <h2 className="text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-semibold text-[#F0AE4F]">
+      <h2
+        className="text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-semibold text-[#F0AE4F]"
+        data-aos="fade-in-zoom"
+        data-aos-duration="1000"
+      >
         OUR TEAM
       </h2>
-      <p className="mx-auto mt-4 mb-4 text-center text-sm text-gray-300 sm:text-base">
+      <p
+        className="mx-auto mt-4 mb-4 text-center text-sm text-gray-300 sm:text-base"
+        data-aos="fade-in-zoom"
+        data-aos-duration="1500"
+      >
         The Minds Behind Our Innovations
       </p>
 
       {/* Content */}
-      <div className="grid grid-cols-2  md:grid-cols-3 max-w-9xl gap-4 justify-items-center hover:ease-in-out">
+      <div
+        className="grid grid-cols-2  md:grid-cols-3 max-w-9xl gap-4 justify-items-center hover:ease-in-out"
+        data-aos="fade-in-zoom"
+        data-aos-duration="2000"
+      >
         {teamMembers.map(({ name, role, image }, index) => (
           <div
             key={index}

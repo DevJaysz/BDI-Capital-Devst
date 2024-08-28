@@ -5,7 +5,11 @@ function HowDoWeInvest() {
     <>
       {/* Component */}
       <div className="flex flex-col-reverse items-center gap-4 md:gap-10 lg:flex-row lg:items-center">
-        <div className="flex flex-col gap-4 lg:w-1/2 lg:text-left">
+        <div
+          className="flex flex-col gap-4 lg:w-1/2 lg:text-left"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <h2 className="max-w-3xl text-2xl md:text-3xl lg:text-5xl font-semibold text-[#F0AE4F] text-center lg:text-left ">
             HOW WE INVEST
           </h2>
@@ -21,7 +25,11 @@ function HowDoWeInvest() {
           </p>
         </div>
 
-        <div className="w-full lg:w-1/2 flex justify-center">
+        <div
+          className="w-full lg:w-1/2 flex justify-center"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <img
             src={Thrive2}
             className="rounded-lg w-full h-auto max-w-md lg:max-w-full"

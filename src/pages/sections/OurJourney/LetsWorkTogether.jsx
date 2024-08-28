@@ -5,13 +5,21 @@ import Banner from "../../../assets/images/LetsWorkTogether.jpg";
 function LetsWorkTogether() {
   return (
     <>
-      <div className="text-center">
+      <div
+        className="text-center "
+        data-aos="fade-zoom-in"
+        data-aos-duration="1000"
+      >
         <h1 className="my-5 text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-semibold text-[#F0AE4F] uppercase">
           Let's Work Together
         </h1>
       </div>
 
-      <div className=" w-full flex justify-center">
+      <div
+        className=" w-full flex justify-center"
+        data-aos="fade-zoom-in"
+        data-aos-duration="1500"
+      >
         <img
           className="object-cover w-full max-w-7xl h-64 rounded-lg md:h-30 lg:h-96 "
           src={Banner}
@@ -43,6 +51,8 @@ function LetsWorkTogether() {
           <div
             key={title}
             className="p-2 md:p-3 rounded-lg border shadow-md flex items-center w-full"
+            data-aos="fade-right"
+            data-aos-duration="1500"
           >
             <span className="p-4 text-gray-300 ">{icon}</span>
             <div className="ml-4">

@@ -9,7 +9,11 @@ function ContactUs() {
       className="container mx-auto flex flex-col items-center justify-center h-auto min-h-screen px-8 md:px-28 lg:px-8 md:-mt-10"
     >
       <div className="flex flex-col lg:flex-row items-center gap-4  md:gap-8 w-full">
-        <div className="max-w-3xl  flex flex-col gap-4 items-start">
+        <div
+          className="max-w-3xl  flex flex-col gap-4 items-start"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <h2 className="text-2xl font-extrabold md:text-6xl mt-5 text-[#F0AE4F]">
             Let's build something exciting together!
           </h2>
@@ -35,7 +39,11 @@ function ContactUs() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-lg w-full gap-4 p-5 md:p-10 text-center flex flex-col rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg">
+        <div
+          className="mx-auto max-w-lg w-full gap-4 p-5 md:p-10 text-center flex flex-col rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <h3 className="text-2xl font-bold md:text-3xl text-[#F0AE4F]">
             Let's Connect!
           </h3>
