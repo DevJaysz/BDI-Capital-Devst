@@ -24,7 +24,7 @@ function BusinessSheet() {
             at night, all the questions you can’t answer, and all the tasks
             you’re still figuring out how to do.
           </p>
-          <Link to="/WhatWeOffer">
+          <Link to="/WhatWeOffer#GetStarted">
             <button
               className="flex items-center justify-center py-3 px-6 text-sm font-semibold rounded-lg max-w-xs border text-gray-300 hover:bg-white hover:text-black transition duration-300"
               data-aos="fade-zoom-in"

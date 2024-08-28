@@ -1,10 +1,31 @@
 import React from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function GetStarted() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        // Adjust the offset value as needed
+        const offset = 350; // Change this value to fit your needs
+        const elementPosition =
+          element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [hash]);
   return (
     <>
       {/* Content */}
-      <div id="#GetStarted" className="text-center max-w-6xl mx-auto z-10">
+      <div id="GetStarted" className="text-center max-w-6xl mx-auto z-10">
         <p
           className="mb-4 text-sm md:text-2xl text-gray-300"
           data-aos="fade-zoom-in"
