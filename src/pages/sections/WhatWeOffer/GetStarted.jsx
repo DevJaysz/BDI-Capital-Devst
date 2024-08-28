@@ -4,7 +4,7 @@ function GetStarted() {
   return (
     <>
       {/* Content */}
-      <div className="text-center max-w-6xl mx-auto z-10">
+      <div id="#GetStarted" className="text-center max-w-6xl mx-auto z-10">
         <p
           className="mb-4 text-sm md:text-2xl text-gray-300"
           data-aos="fade-zoom-in"

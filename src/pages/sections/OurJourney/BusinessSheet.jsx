@@ -1,9 +1,10 @@
 import AskAnExpert from "../../../assets/images/AskAnExpert.jpg";
 import { RiArrowRightWideFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 function BusinessSheet() {
   return (
-    <div className="mx-auto w-full max-w-7xl ">
+    <div id="/BusinessSheet" className="mx-auto w-full max-w-7xl ">
       <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-6 items-center">
         {/* Hero Content */}
         <div className="lg:pr-6">
@@ -23,14 +24,16 @@ function BusinessSheet() {
             at night, all the questions you can’t answer, and all the tasks
             you’re still figuring out how to do.
           </p>
-          <button
-            className="flex items-center justify-center  py-3 px-6 text-sm font-semibold rounded-lg max-w-xs border text-gray-300 hover:bg-white hover:text-black transition duration-300"
-            data-aos="fade-zoom-in"
-            data-aos-duration="1000"
-          >
-            Get Started
-            <RiArrowRightWideFill className="ml-2" />
-          </button>
+          <Link to="/WhatWeOffer">
+            <button
+              className="flex items-center justify-center py-3 px-6 text-sm font-semibold rounded-lg max-w-xs border text-gray-300 hover:bg-white hover:text-black transition duration-300"
+              data-aos="fade-zoom-in"
+              data-aos-duration="1000"
+            >
+              Get Started
+              <RiArrowRightWideFill className="ml-2" />
+            </button>
+          </Link>
         </div>
         {/* Hero Image */}
         <div

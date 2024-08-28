@@ -1,10 +1,11 @@
 import NavLogo from "../../../assets/images/NavBar_Logo.png";
+import { Link as ScrollLink } from "react-scroll";
 import { FaMicrophone, FaSearch } from "react-icons/fa";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import { useEffect, useState } from "react";
 
 function TypeWriter() {
   const [typeEffect] = useTypewriter({
@@ -86,14 +87,21 @@ function TypeWriter() {
         >
           you're in the right place
         </h2>
-        <div
-          className={`flex justify-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-gray-300  animate-bounce transition-opacity duration-1000 ${
-            showArrow ? "opacity-100" : "opacity-0"
-          }`}
-          style={{ visibility: showArrow ? "visible" : "hidden" }}
+        <ScrollLink
+          to="/BusinessSheet"
+          smooth={true}
+          duration={500}
+          offset={-250}
         >
-          <MdKeyboardDoubleArrowDown className="cursor-pointer" />
-        </div>
+          <div
+            className={`flex justify-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-gray-300 animate-bounce transition-opacity duration-1000 ${
+              showArrow ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ visibility: showArrow ? "visible" : "hidden" }}
+          >
+            <MdKeyboardDoubleArrowDown className="cursor-pointer" />
+          </div>
+        </ScrollLink>
       </div>
     </>
   );
