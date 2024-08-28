@@ -57,7 +57,7 @@ function YourOperations() {
               <div
                 key={step.step}
                 className="flex max-w-lg justify-center gap-1 border-gray-300 text-black"
-                data-aos="fade-left"
+                data-aos="fade-in-zoom"
                 data-aos-duration="1000"
               >
                 <div className="flex h-10 w-10 flex-none items-start justify-center text-gray-400">

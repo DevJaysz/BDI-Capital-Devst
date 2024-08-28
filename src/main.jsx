@@ -14,11 +14,14 @@ import Policy from "./pages/Policy.jsx";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Terms from "./pages/Terms.jsx";
 
+// Layout component to include NavBar and Footer
 const Layout = () => {
   useEffect(() => {
-    Aos.init(); // Initialize Aos
+    Aos.init(); // Initialize AOS animations
   }, []);
+
   return (
     <div>
       <NavBar />
@@ -28,6 +31,7 @@ const Layout = () => {
   );
 };
 
+// Define the router configuration
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +45,7 @@ const router = createBrowserRouter([
         path: "/App",
         element: <App />,
       },
+
       {
         path: "/ThriveWithUs",
         element: <ThriveWithUs />,
@@ -65,10 +70,15 @@ const router = createBrowserRouter([
         path: "/Policy",
         element: <Policy />,
       },
+      {
+        path: "/Terms",
+        element: <Terms />,
+      },
     ],
   },
 ]);
 
+// Render the application
 createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
 );

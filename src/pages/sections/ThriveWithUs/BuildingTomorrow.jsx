@@ -47,15 +47,15 @@ function BuildingTomorrow() {
         {/* Title */}
         <h2
           className=" text-2xl md:text-5xl lg:text-5xl xl:text-7xl font-semibold lg:mb-4"
-          data-aos="fade-right"
-          data-aos-duration="1000"
+          data-aos="fade-in-zoom"
+          data-aos-duration="500"
         >
           BUILDING TOMORROW WITH
         </h2>
         <h2
           className=" text-2xl md:text-5xl lg:text-5xl xl:text-7xl font-semibold text-[#F0AE4F] lg:mb-8"
-          data-aos="fade-left"
-          data-aos-duration="2000"
+          data-aos="fade-in-zoom"
+          data-aos-duration="1000"
         >
           FEARLESS ENTREPRENEURS
         </h2>
@@ -90,12 +90,11 @@ function BuildingTomorrow() {
         duration={500}
         offset={-250}
       >
-        <div
-          className="hidden md:flex justify-center text-5xl lg:text-8xl animate-slow-bounce cursor-pointer  mt-12 animate-bounce"
-          data-aos="fade-zoom-in"
-          data-aos-duration="1500"
-        >
-          <MdKeyboardDoubleArrowDown />
+        <div className="hidden md:flex justify-center text-5xl lg:text-8xl animate-slow-bounce cursor-pointer  mt-12 animate-bounce">
+          <MdKeyboardDoubleArrowDown
+            data-aos="fade-zoom-in"
+            data-aos-duration="2500"
+          />
         </div>
       </ScrollLink>
     </div>

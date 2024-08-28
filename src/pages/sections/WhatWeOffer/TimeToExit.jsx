@@ -54,7 +54,7 @@ function TimeToExit() {
                 duration={500}
                 offset={-150} // Adjust offset as needed
                 className="flex max-w-lg gap-2 md:p-3 cursor-pointer"
-                data-aos="fade-left"
+                data-aos="fade-in-zoom"
                 data-aos-duration="1500"
               >
                 <div className="flex h-10 w-10 flex-none items-start justify-center rounded-full text-gray-400">

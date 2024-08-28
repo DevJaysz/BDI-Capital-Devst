@@ -10,7 +10,7 @@ function Policy() {
             Privacy Statement
           </h1>
           <p className="text-sm  sm:text-base text-gray-400">
-            Last Updated as of ``
+            Last Updated: [Date]
           </p>
         </div>
       </div>
@@ -43,11 +43,7 @@ function Policy() {
               Privacy Act”).
             </p>
             <div className="flex min-w-full flex-col gap-y-10">
-              <div className="flex min-w-full py-4  border-b border-gray-300">
-                <h6 className="text-base font-bold text-gray-300">
-                  GENERAL TERMS &amp; CONDITIONS
-                </h6>
-              </div>
+              <div className="flex min-w-full py-4  border-b border-gray-300"></div>
               <div className="flex flex-col gap-y-10">
                 <div className="flex min-w-full flex-col items-start gap-y-6">
                   <div className="flex flex-col items-start gap-y-3">
@@ -244,7 +240,7 @@ function Policy() {
                   </div>
                   <div className="flex flex-col items-start gap-y-3">
                     <p className="text-sm font-bold text-gray-300">
-                      Contacting Us
+                      Contact Us
                     </p>
                     <p className="text-sm text-gray-400">
                       If there are any questions regarding this privacy policy,

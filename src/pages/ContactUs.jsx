@@ -41,7 +41,7 @@ function ContactUs() {
 
         <div
           className="mx-auto max-w-lg w-full gap-4 p-5 md:p-10 text-center flex flex-col rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
-          data-aos="fade-left"
+          data-aos="fade-down"
           data-aos-duration="1000"
         >
           <h3 className="text-2xl font-bold md:text-3xl text-[#F0AE4F]">

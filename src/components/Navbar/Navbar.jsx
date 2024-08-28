@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoIosMenu, IoIosClose } from "react-icons/io";
@@ -7,6 +7,7 @@ import NavLogo from "../../assets/images/NavBar_Logo.png";
 function NavBar() {
   const [nav, setNav] = useState(false);
   const location = useLocation();
+
   const handleNav = () => {
     setNav(!nav);
   };
@@ -14,15 +15,25 @@ function NavBar() {
   // Function to check if the link is active
   const isActive = (path) => location.pathname === path;
 
+  // Scroll to the top of the page when the URL changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [location]);
+
   return (
     <nav className="sticky top-0 z-50 shadow-slate-50 bg-[#111111] text-gray-300">
       <div className="container mx-auto flex justify-between items-center h-16 lg:h-20 px-4 ">
         {/* Navbar Logo */}
-        <img
-          src={NavLogo}
-          className="w-20 lg:w-32 md:w-24 hover:scale-105 transition-all cursor-pointer"
-          alt="Nav Logo"
-        />
+        <Link to="/">
+          <img
+            src={NavLogo}
+            className="w-20 lg:w-32 md:w-24 hover:scale-105 transition-all cursor-pointer"
+            alt="Nav Logo"
+          />
+        </Link>
         {/* Navbar Links */}
         <ul className="hidden md:flex space-x-4 font-medium text-gray-300 uppercase items-center">
           <li className="relative group">

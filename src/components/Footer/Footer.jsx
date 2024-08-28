@@ -18,7 +18,7 @@ function Footer() {
       title: "Legal",
       items: [
         { text: "Privacy Policy", href: "/Policy" },
-        { text: "Terms & Conditions", href: "/Policy" },
+        { text: "Terms & Conditions", href: "/Terms" },
       ],
     },
   ];

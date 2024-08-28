@@ -53,7 +53,7 @@ function ReadyStartUp() {
               <div
                 key={index}
                 className="flex max-w-lg justify-center gap-2 md:p-3 cursor-default" // Adding cursor-default class
-                data-aos="fade-left"
+                data-aos="fade-in-zoom"
                 data-aos-duration="1000"
               >
                 <div className="flex h-10 w-10 flex-none items-start justify-center rounded-full text-gray-400">

@@ -38,8 +38,8 @@ function BusinessSheet() {
         {/* Hero Image */}
         <div
           className="h-full w-full "
-          data-aos="fade-left"
-          data-aos-duration="1200"
+          data-aos="fade-zoom-in"
+          data-aos-duration="1500"
         >
           <img
             src={AskAnExpert}

@@ -13,7 +13,7 @@ import TransactionAdvisory from "./sections/WhatWeOffer/TransactionAdvisory";
 function WhatWeOffer() {
   return (
     <>
-      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 -mt-16 lg:-mt-20">
+      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 -mt-16 lg:-mt-20 ">
         <GetStarted />
       </section>
       <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 ">

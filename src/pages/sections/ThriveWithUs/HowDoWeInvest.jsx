@@ -27,7 +27,7 @@ function HowDoWeInvest() {
 
         <div
           className="w-full lg:w-1/2 flex justify-center"
-          data-aos="fade-left"
+          data-aos="fade-zoom-in"
           data-aos-duration="1000"
         >
           <img

@@ -7,7 +7,7 @@ function FundingYourVenture() {
       <div className="flex flex-col-reverse  items-center justify-center  gap-4 md:gap-10 lg:flex-row-reverse lg:gap-8 ">
         <div
           className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:items-start lg:justify-start lg:w-1/2 lg:text-left text-center"
-          data-aos="fade-left"
+          data-aos="fade-in-zoom"
           data-aos-duration="1000"
         >
           <div className="flex flex-col items-center gap-4 lg:items-start w-full max-w-3xl">

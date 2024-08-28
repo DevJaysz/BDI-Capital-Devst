@@ -10,7 +10,7 @@ function OurApproach() {
       >
         <div
           className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:items-start lg:justify-start lg:w-1/2 lg:text-left text-center"
-          data-aos="fade-left"
+          data-aos="fade-zoom-in"
           data-aos-duration="1000"
         >
           <div className="flex flex-col items-center gap-4 lg:items-start w-full max-w-3xl">
