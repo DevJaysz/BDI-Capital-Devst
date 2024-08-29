@@ -19,7 +19,7 @@
     "react-scroll": "^1.9.0",
     "react-simple-typewriter": "^5.0.1",
     "react-typed": "^2.0.12",
-    "swiper": "^11.1.9"
+    "swiper": "^11.1.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
