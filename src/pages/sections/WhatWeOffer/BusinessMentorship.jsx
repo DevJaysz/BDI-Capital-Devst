@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import ContactFormModal from "../../../components/Modal/Modal"; // Import the ContactFormModal component
-// Import the PriceAnimation component if it exists
-// import PriceAnimation from './path/to/PriceAnimation';
 
 const plans = [
   {
