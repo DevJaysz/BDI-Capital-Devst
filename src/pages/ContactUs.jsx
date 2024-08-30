@@ -78,11 +78,11 @@ function ContactUs() {
           <div className="text-gray-300">
             <div className="flex items-center space-x-2">
               <BsFillTelephoneFill className="text-lg" />
-              <span>Phone: (123) 456-7890</span>
+              <span>Phone: (+63) 917-820-4369</span>
             </div>
             <div className="flex items-center space-x-2">
               <MdEmail className="text-lg" />
-              <span>Email: contact@example.com</span>
+              <span>Email: info@bdi-capital.com</span>
             </div>
           </div>
         </div>
@@ -201,6 +201,33 @@ function ContactUs() {
                 </option>
               </select>
             </div>
+            <div className="flex flex-col xl:flex-row gap-2">
+  <div className="w-full">
+    <label htmlFor="schedule-date" className="mb-1 font-medium text-sm">
+      Preferred Schedule Date:
+    </label>
+    <input
+      type="date"
+      id="schedule-date"
+      name="schedule_date"
+      required
+      className="h-10 w-full rounded-md border border-solid border-black px-2 py-2 pl-4 text-sm text-black"
+    />
+  </div>
+
+  <div className="w-full">
+    <label htmlFor="schedule-time" className="mb-1 font-medium text-sm">
+      Preferred Schedule Time:
+    </label>
+    <input
+      type="time"
+      id="schedule-time"
+      name="schedule_time"
+      required
+      className="h-10 w-full rounded-md border border-solid border-black px-2 py-2 pl-4 text-sm text-black"
+    />
+  </div>
+</div>
 
             <div className="flex flex-col gap-2">
               <label htmlFor="project-brief" className="font-medium text-sm">
