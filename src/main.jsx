@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import NavBar from "./components/Navbar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import App from "./App.jsx";
@@ -15,8 +16,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Terms from "./pages/Terms.jsx";
+import { Helmet } from "react-helmet";
 
-// Layout component to include NavBar and Footer
 const Layout = () => {
   useEffect(() => {
     Aos.init(); // Initialize AOS animations
@@ -24,6 +25,17 @@ const Layout = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>BDI Capital | Driving Innovations Through Investments</title>
+        <meta
+          name="description"
+          content="BDI Capital has successfully closed $21 million in fundraising transactions for its clients. Turn your idea into reality."
+        />
+        <meta
+          name="keywords"
+          content="Innovative, Investment, Firm Specializing, Transformative, Business Growth, Strategic Funding, Solutions"
+        />
+      </Helmet>
       <NavBar />
       <Outlet />
       <Footer />
@@ -80,5 +92,7 @@ const router = createBrowserRouter([
 
 // Render the application
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <HelmetProvider>
+    <RouterProvider router={router} />
+  </HelmetProvider>
 );

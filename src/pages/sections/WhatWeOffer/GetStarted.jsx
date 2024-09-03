@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
@@ -57,7 +56,7 @@ function GetStarted() {
         >
           WELCOME TO YOUR <span className="text-[#F0AE4F]">BUSINESS SHEET</span>
         </h1>
-        <div className="flex flex-col md:flex-row justify-evenly gap-6 pt-4 w-full text-gray-300 cursor-pointer">
+        <div className="flex flex-col md:flex-row justify-evenly gap-6 pt-4 w-full text-gray-300 ">
           {Object.entries(scrollLinks).map(([text, id]) => (
             <ScrollLink
               key={text}
@@ -65,7 +64,7 @@ function GetStarted() {
               smooth={true}
               duration={500}
               offset={-150}
-              className="border-2 border-white rounded-full px-4 py-2 md:px-6 md:py-3 text-sm md:text-lg w-full md:w-auto hover:bg-white hover:text-black transition duration-300"
+              className="border-2 border-white rounded-full px-4 py-2 md:px-6 md:py-3 text-sm md:text-lg w-full md:w-auto hover:bg-white hover:text-black cursor-pointer transition duration-300"
               data-aos="fade-up"
               data-aos-duration="2500"
             >

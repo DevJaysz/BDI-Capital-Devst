@@ -2,7 +2,15 @@ import React from "react";
 
 function Terms() {
   return (
-    <section>
+    <>
+      <Helmet>
+        <title>Terms & Conditions| BDI Capital</title>
+        <meta
+          name="description"
+          content="This Terms and Conditions document has been created to provide clear guidance to anyone using the services of BDI Capital, outlining the rules, responsibilities, and legal obligations that govern the relationship between BDI Capital and its users."
+        />
+        <meta name="keywords" content="BDI Capital Terms & Conditions" />
+      </Helmet>
       {/* Title Container */}
       <div className="flex h-auto w-full flex-col items-center justify-center  md:h-64">
         <div className="flex flex-col items-center gap-y-4 ">
@@ -168,7 +176,7 @@ function Terms() {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }
 

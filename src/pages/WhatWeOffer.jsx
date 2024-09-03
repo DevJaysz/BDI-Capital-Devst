@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import GetStarted from "../pages/sections/WhatWeOffer/GetStarted";
 import ReadyStartUp from "../pages/sections/WhatWeOffer/ReadyStartUp";
 import TimeToExit from "../pages/sections/WhatWeOffer/TimeToExit";
@@ -13,6 +14,14 @@ import TransactionAdvisory from "./sections/WhatWeOffer/TransactionAdvisory";
 function WhatWeOffer() {
   return (
     <>
+      <Helmet>
+        <title>What We Offer | BDI Capital</title>
+        <meta
+          name="description"
+          content="We offer excellent services for exceptional founders. The services are Mergers and Acquisitions, Start-up Consultation, and more."
+        />
+        <meta name="keywords" content="investment services" />
+      </Helmet>
       <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 -mt-16 lg:-mt-20 ">
         <GetStarted />
       </section>

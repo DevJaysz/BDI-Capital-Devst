@@ -61,7 +61,7 @@ function ReadyStartUp() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <SmoothScroll
-                    to="step-01" /* {`step-${item.step}`} */ //for more section array
+                    to="Mentorship" /* {`step-${item.step}`} */ //for more section array
                     smooth={true}
                     duration={500}
                     offset={-170} // Adjust the offset as needed

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import ContactFormModal from "../../../components/Modal/Modal"; // Import the ContactFormModal component
+import { InlineWidget } from "react-calendly"; // Import the ContactFormModal component
+import Calendly from "../../../components/Calendly/Calendly";
 
 const plans = [
   {
@@ -7,10 +8,10 @@ const plans = [
     title: "BASIC",
     heading: "Accounting System Set-up & Support​",
     description: `We’ll help make sure your books are perfect by teaching you the accounting system of your choice. From inventory and  invoice set up, to understanding your management reports, we’ve got you covered. Continue on with monthly system support, where we guide you as you do your bank reconciliations and receipting. `,
-
     price: 400,
     pricePeriod: "/Four-Five Sessions",
-    buttonText: "Book now",
+    buttonText: "Book Schedule",
+    calendlyUrl: "https://calendly.com/rachel-bdi",
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const plans = [
     description: `Organizing finances and other support-services can be overwhelming. It takes too much time and can make any entrepreneur lose sight of the macros. Through our services, we hope to help founders focus on the business, while we take the reins on the back end.`,
     price: 400,
     pricePeriod: "/starting",
-    buttonText: "Book now",
+    buttonText: "Book Schedule",
+    calendlyUrl: "https://calendly.com/rachel-bdi",
   },
   {
     id: 3,
@@ -28,7 +30,8 @@ const plans = [
     description: `Confused by corporate taxes? Our team will assist with the ins and outs of corporate taxes. From tax compliance, cross border tax optimization, obtaining tax incentives, and more, we’ll make sure your taxes are up to date.`,
     price: 900,
     pricePeriod: "/starting",
-    buttonText: "Book now",
+    buttonText: "Book Schedule",
+    calendlyUrl: "https://calendly.com/rachel-bdi",
   },
 ];
 
@@ -60,28 +63,19 @@ const PriceAnimation = ({ price, isVisible }) => {
 
 function BusinessConsulting() {
   const [isVisible, setIsVisible] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [selectedCalendlyUrl, setSelectedCalendlyUrl] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const sectionRef = useRef(null);
-
-  const openModal = (plan) => {
-    setSelectedPlan(plan);
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target); // Stop observing once visible
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of the component is visible
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -94,6 +88,23 @@ function BusinessConsulting() {
       }
     };
   }, []);
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add("overflow-hidden"); // Disable scrolling when modal is open
+    } else {
+      document.body.classList.remove("overflow-hidden"); // Enable scrolling when modal is closed
+    }
+  }, [isModalOpen]);
+
+  const handleOpenCalendly = (url) => {
+    setSelectedCalendlyUrl(url);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedCalendlyUrl(null);
+  };
 
   return (
     <div id="01" className="max-w-7xl px-0 lg:px-5" ref={sectionRef}>
@@ -103,11 +114,11 @@ function BusinessConsulting() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-1 lg:grid-cols-3 ">
+      <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-1 lg:grid-cols-3">
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className="mx-auto flex w-full max-w-md flex-col items-start gap-4  p-2 md:p-8 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
+            className="mx-auto flex w-full max-w-md flex-col items-start gap-4 p-2 md:p-8 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
           >
             <div className="rounded-md bg-black px-4 py-1.5">
               <p className="text-sm font-bold text-white md:text-sm">
@@ -128,8 +139,8 @@ function BusinessConsulting() {
                 </span>
               </h2>
               <button
-                onClick={() => openModal(plan)}
-                className="w-full rounded-md border text-gray-300 px-6 py-3 text-center font-semibold"
+                onClick={() => handleOpenCalendly(plan.calendlyUrl)}
+                className="w-full rounded-md border text-gray-300 px-6 py-3 text-center font-semibold hover:bg-white hover:text-black cursor-pointer transition duration-300"
               >
                 {plan.buttonText}
               </button>
@@ -138,12 +149,15 @@ function BusinessConsulting() {
         ))}
       </div>
 
-      {/* Render the ContactFormModal and pass down props */}
-      <ContactFormModal
-        isOpen={modalOpen}
-        onClose={closeModal}
-        plan={selectedPlan}
-      />
+      {/* Calendly Modal */}
+      <Calendly show={isModalOpen} onClose={handleCloseModal}>
+        {selectedCalendlyUrl && (
+          <InlineWidget
+            url={selectedCalendlyUrl}
+            styles={{ height: "700px", width: "100%" }}
+          />
+        )}
+      </Calendly>
     </div>
   );
 }

@@ -52,7 +52,7 @@ function TimeToExit() {
             {steps.map((item, index) => (
               <SmoothScroll
                 key={index}
-                to="step-04" /* to={item.id} */ //replace if the data is from array
+                to="Transaction" /* to={item.id} */ //replace if the data is from array
                 smooth={true}
                 duration={500}
                 offset={-150} // Adjust offset as needed

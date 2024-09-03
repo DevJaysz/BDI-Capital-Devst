@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import ContactFormModal from "../../../components/Modal/Modal";
+import { InlineWidget } from "react-calendly"; // Import the ContactFormModal component
+import Calendly from "../../../components/Calendly/Calendly";
 
 const plans = [
   {
@@ -13,7 +14,8 @@ BDI Capital has successfully closed $43.5 million in fundraising transactions fo
 
     price: "",
     pricePeriod: "/starting",
-    buttonText: "Book now",
+    buttonText: "Book Schedule",
+    calendlyUrl: "https://calendly.com/rachel-bdi",
   },
   {
     id: 2,
@@ -23,7 +25,8 @@ BDI Capital has successfully closed $43.5 million in fundraising transactions fo
   `,
     price: 1000,
     pricePeriod: "/starting per year",
-    buttonText: "Book now",
+    buttonText: "Book Schedule",
+    calendlyUrl: "https://calendly.com/rachel-bdi",
   },
   {
     id: 3,
@@ -32,7 +35,8 @@ BDI Capital has successfully closed $43.5 million in fundraising transactions fo
     description: `Whether you’ve just exited your venture, or need safe and advantageous places to grow your wealth, BDI’s expert team will deliver thoughtful investment advisory services. Our own investments have reached 100x returns.`,
     price: 1000,
     pricePeriod: "/per month",
-    buttonText: "Book now",
+    buttonText: "Book Schedule",
+    calendlyUrl: "https://calendly.com/rachel-bdi",
   },
 ];
 const PriceAnimation = ({ price, isVisible }) => {
@@ -62,28 +66,19 @@ const PriceAnimation = ({ price, isVisible }) => {
 };
 function TransactionAdvisory() {
   const [isVisible, setIsVisible] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [selectedCalendlyUrl, setSelectedCalendlyUrl] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const sectionRef = useRef(null);
-
-  const openModal = (plan) => {
-    setSelectedPlan(plan);
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target); // Stop observing once visible
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of the component is visible
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -97,19 +92,37 @@ function TransactionAdvisory() {
     };
   }, []);
 
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add("overflow-hidden"); // Disable scrolling when modal is open
+    } else {
+      document.body.classList.remove("overflow-hidden"); // Enable scrolling when modal is closed
+    }
+  }, [isModalOpen]);
+
+  const handleOpenCalendly = (url) => {
+    setSelectedCalendlyUrl(url);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedCalendlyUrl(null);
+  };
+
   return (
-    <div id="01" className="max-w-7xl px-0 lg:px-5" ref={sectionRef}>
+    <div id="Transaction" className="max-w-7xl px-0 lg:px-5" ref={sectionRef}>
       <div className="mx-auto mb-4 max-w-5xl text-center md:mb-12 lg:mb-8">
         <h2 className="text-2xl font-bold md:text-5xl items-start text-[#F0AE4F]">
           TRANSACTION ADVISORY
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-1 lg:grid-cols-3 ">
+      <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-1 lg:grid-cols-3">
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className="mx-auto flex w-full max-w-md flex-col items-start gap-4  p-2 md:p-8 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
+            className="mx-auto flex w-full max-w-md flex-col items-start gap-4 p-2 md:p-8 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
           >
             <div className="rounded-md bg-black px-4 py-1.5">
               <p className="text-sm font-bold text-white md:text-sm">
@@ -130,8 +143,8 @@ function TransactionAdvisory() {
                 </span>
               </h2>
               <button
-                onClick={() => openModal(plan)}
-                className="w-full rounded-md border text-gray-300 px-6 py-3 text-center font-semibold"
+                onClick={() => handleOpenCalendly(plan.calendlyUrl)}
+                className="w-full rounded-md border text-gray-300 px-6 py-3 text-center font-semibold hover:bg-white hover:text-black cursor-pointer transition duration-300"
               >
                 {plan.buttonText}
               </button>
@@ -140,12 +153,15 @@ function TransactionAdvisory() {
         ))}
       </div>
 
-      {/* Render the ContactFormModal and pass down props */}
-      <ContactFormModal
-        isOpen={modalOpen}
-        onClose={closeModal}
-        plan={selectedPlan}
-      />
+      {/* Calendly Modal */}
+      <Calendly show={isModalOpen} onClose={handleCloseModal}>
+        {selectedCalendlyUrl && (
+          <InlineWidget
+            url={selectedCalendlyUrl}
+            styles={{ height: "700px", width: "100%" }}
+          />
+        )}
+      </Calendly>
     </div>
   );
 }

@@ -1,8 +1,17 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 function Policy() {
   return (
-    <section>
+    <>
+      <Helmet>
+        <title>Privacy Policy | BDI Capital</title>
+        <meta
+          name="description"
+          content="This privacy policy has been prepared to better serve any person who avails of the Services of BDI Capital to inform them on how their personal data are being collected, used and secured by BDI Capital."
+        />
+        <meta name="keywords" content="BDI Capital Privacy Policy" />
+      </Helmet>
       {/* Title Container */}
       <div className="flex h-auto w-full flex-col items-center justify-center  md:h-64">
         <div className="flex flex-col items-center gap-y-4 ">
@@ -278,7 +287,7 @@ function Policy() {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }
 

@@ -3,8 +3,46 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoMdSend } from "react-icons/io";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Helmet } from "react-helmet";
 
 function ContactUs() {
+  const formatTime = (timeString) => {
+    const [hour, minute] = timeString.split(":");
+    const hours = parseInt(hour, 10);
+    const suffix = hours >= 12 ? "PM" : "AM";
+    const formattedHour = hours % 12 || 12; // Convert to 12-hour format, ensuring 0 becomes 12
+    return `${formattedHour}:${minute} ${suffix}`;
+  };
+
+  const handleTimeChange = (e) => {
+    const timeValue = e.target.value;
+    const formattedTime = formatTime(timeValue);
+    // Here, you can either display this formatted time somewhere or use it before submission
+    console.log(formattedTime); // Example usage
+  };
+
+  const getDayOfWeek = (dateString) => {
+    const daysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const date = new Date(dateString);
+    const day = daysOfWeek[date.getDay()];
+    return day;
+  };
+
+  const handleDateChange = (e) => {
+    const dateValue = e.target.value;
+    const dayOfWeek = getDayOfWeek(dateValue);
+    // Display or use the dayOfWeek as needed
+    console.log(dayOfWeek); // Example usage
+  };
+
   const form = useRef();
   const [formStatus, setFormStatus] = useState(null);
 
@@ -56,6 +94,14 @@ function ContactUs() {
       id="ContactUs"
       className="container mx-auto flex flex-col items-center justify-center h-auto min-h-screen px-8 md:px-28 lg:px-8 md:-mt-10"
     >
+      <Helmet>
+        <title>Contact Us | BDI Capital</title>
+        <meta
+          name="description"
+          content="Let's build something exciting together!"
+        />
+        <meta name="keywords" content="contact us" />
+      </Helmet>
       <div className="flex flex-col lg:flex-row items-center gap-4 md:gap-8 w-full">
         <div
           className="max-w-3xl flex flex-col gap-4 items-start"
@@ -202,32 +248,40 @@ function ContactUs() {
               </select>
             </div>
             <div className="flex flex-col xl:flex-row gap-2">
-  <div className="w-full">
-    <label htmlFor="schedule-date" className="mb-1 font-medium text-sm">
-      Preferred Schedule Date:
-    </label>
-    <input
-      type="date"
-      id="schedule-date"
-      name="schedule_date"
-      required
-      className="h-10 w-full rounded-md border border-solid border-black px-2 py-2 pl-4 text-sm text-black"
-    />
-  </div>
+              <div className="w-full">
+                <label
+                  htmlFor="schedule-date"
+                  className="mb-1 font-medium text-sm"
+                >
+                  Preferred Schedule Date:
+                </label>
+                <input
+                  type="date"
+                  id="schedule-date"
+                  name="schedule_date"
+                  required
+                  className="h-10 w-full rounded-md border border-solid border-black px-2 py-2 pl-4 text-sm text-black"
+                  onChange={handleDateChange} // Bind to handle date change
+                />
+              </div>
 
-  <div className="w-full">
-    <label htmlFor="schedule-time" className="mb-1 font-medium text-sm">
-      Preferred Schedule Time:
-    </label>
-    <input
-      type="time"
-      id="schedule-time"
-      name="schedule_time"
-      required
-      className="h-10 w-full rounded-md border border-solid border-black px-2 py-2 pl-4 text-sm text-black"
-    />
-  </div>
-</div>
+              <div className="w-full">
+                <label
+                  htmlFor="schedule-time"
+                  className="mb-1 font-medium text-sm"
+                >
+                  Preferred Schedule Time:
+                </label>
+                <input
+                  type="time"
+                  id="schedule-time"
+                  name="schedule_time"
+                  required
+                  className="h-10 w-full rounded-md border border-solid border-black px-2 py-2 pl-4 text-sm text-black"
+                  onChange={handleTimeChange} // Bind to handle time change
+                />
+              </div>
+            </div>
 
             <div className="flex flex-col gap-2">
               <label htmlFor="project-brief" className="font-medium text-sm">
