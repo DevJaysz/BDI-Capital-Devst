@@ -6,7 +6,7 @@ import Calendly from "../../../components/Calendly/Calendly";
 const plans = [
   {
     id: 1,
-    title: "BASIC",
+    title: "01",
     heading: "One-on-One Mentorship",
     description: `Take charge of your business’ growth and your personal development as an entrepreneur. Our one-on-one mentorship program helps both you and your business progress. Each session is designed to sharpen your entrepreneurial skills while assisting in the conceptualization and execution of business strategy.`,
     price: 600,
@@ -16,7 +16,7 @@ const plans = [
   },
   {
     id: 2,
-    title: "GROWTH",
+    title: "02",
     heading: "Quick Fix Session",
     description: `Find the solutions to the questions and problems you can’t answer. A one to two-hour session, we tackle your immediate business problems, providing strategy and remedy. Our expertise includes corporate structure, general company operations, financial modeling and planning, marketing and communications strategy, and growth strategy in the following industries: energy utilities, communication service, hospitality, finance, and real estate.`,
     price: 150,
@@ -26,7 +26,7 @@ const plans = [
   },
   {
     id: 3,
-    title: "PREMIUM",
+    title: "03",
     heading: "Company Incorporation",
     description: `Make the right choice for your company in terms of where to set up shop. Allow us to guide you with documentation, strategy, as well as founder protection.`,
     price: 900,
@@ -43,24 +43,26 @@ const PriceAnimation = ({ price, isVisible }) => {
   useEffect(() => {
     if (!isVisible) return;
 
-    const duration = 1000; // Animation duration in ms
+    let start = 0;
+    const duration = 1000; // duration of the animation in milliseconds
     const increment = price / (duration / 10);
 
     const animate = () => {
-      setAnimatedPrice((prev) => {
-        if (prev < price) {
-          return Math.min(prev + increment, price);
-        }
-        return price;
-      });
+      start += increment;
+      if (start < price) {
+        setAnimatedPrice(Math.floor(start));
+        requestAnimationFrame(animate);
+      } else {
+        setAnimatedPrice(price);
+      }
     };
 
-    const interval = setInterval(animate, 10);
-    return () => clearInterval(interval);
+    animate();
   }, [price, isVisible]);
 
   return <>{`$${animatedPrice.toLocaleString()}`}</>;
 };
+
 
 const BusinessMentorship = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -128,9 +130,11 @@ const BusinessMentorship = () => {
               key={id}
               className="flex flex-col items-start gap-4 p-4 md:p-8 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
             >
-              <div className="bg-black px-4 py-1.5 rounded-md">
-                <p className="text-sm font-bold text-white">{title}</p>
-              </div>
+              <div className="rounded-md  py-1.5">
+              <p className="text-sm font-bold text-gray-500 md:text-sm">
+                {title}
+              </p>
+            </div>
               <h2 className="text-xl md:text-3xl lg:text-2xl font-bold text-gray-300">
                 {heading}
               </h2>

@@ -5,7 +5,7 @@ import Calendly from "../../../components/Calendly/Calendly";
 const plans = [
   {
     id: 1,
-    title: "BASIC",
+    title: "01",
     heading: "Communications Consultation",
     description: `Build your company’s reputation as a team of experts work with you to identify your brand, lay out a plan for a unique communications campaign across traditional and online platforms, and assist you with any projects that will boost your company’s value and awareness in the market.`,
     price: 825,
@@ -15,7 +15,7 @@ const plans = [
   },
   {
     id: 2,
-    title: "GROWTH",
+    title: "02",
     heading: "Digital Marketing​",
     description: `Work with experienced marketers to grow your audience, identify your target market, and effectively convert leads to sales. Create an impact with your brand to foster an engaged and loyal clientele.`,
     price: 1200,
@@ -25,7 +25,7 @@ const plans = [
   },
   {
     id: 3,
-    title: "PREMIUM",
+    title: "03",
     heading: "Digital IT & Infrastructure​",
     description: `Drive your business with smart solutions and experience digital transformations by restructuring your company’s network, software, hardware, and overall security.`,
     price: "",
@@ -129,8 +129,8 @@ function DigitalStrategy() {
             key={plan.id}
             className="mx-auto flex w-full max-w-md flex-col items-start gap-4 p-2 md:p-8 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
           >
-            <div className="rounded-md bg-black px-4 py-1.5">
-              <p className="text-sm font-bold text-white md:text-sm">
+            <div className="rounded-md py-1.5">
+              <p className="text-sm font-bold text-gray-500 md:text-sm">
                 {plan.title}
               </p>
             </div>

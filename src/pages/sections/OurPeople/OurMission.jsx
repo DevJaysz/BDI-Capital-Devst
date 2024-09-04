@@ -12,7 +12,7 @@ function OurMission() {
           OUR MISSION IS TO CREATE FIRST-WORLD INNOVATIONS
         </h2>
         <p
-          className="text-lg text-gray-300 max-w-6xl"
+          className="text-base md:text-lg text-gray-300 max-w-6xl"
           data-aos="fade-in-zoom"
           data-aos-duration="1500"
         >

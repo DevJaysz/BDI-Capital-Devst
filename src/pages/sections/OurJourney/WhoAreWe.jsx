@@ -7,7 +7,7 @@ function WhoAreWe() {
   // Define scroll links and offsets for different sections
   const scrollData = {
     "OUR TRACK RECORD": { id: "/TrackRecord", offset: -250 },
-    "OUR INVESTMENTS": { id: "Investments", offset: -250 },
+    "OUR INVESTMENTS": { id: "/Investments", offset: -150 },
     "OUR CLIENTS SAY": { id: "/Testimonials", offset: -100 }, // Different offset for Testimonials
   };
 

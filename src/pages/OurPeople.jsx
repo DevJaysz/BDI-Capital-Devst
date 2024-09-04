@@ -18,12 +18,15 @@ function OurPeople() {
       <section className="container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 md:px-28 lg:px-8 -mt-10">
         <OurTeam />
       </section>
+      <hr className="  dark:border-gray-700 w-full" />
       <section className="container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 md:px-28 lg:px-8">
         <OurMission />
       </section>
+      <hr className="  dark:border-gray-700 w-full" />
       <section className="container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 md:px-28 lg:px-8">
         <OurCoreValues />
       </section>
+     
       <section className="container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 md:px-28 lg:px-8">
         <JoinMovement />
       </section>

@@ -5,7 +5,7 @@ import Calendly from "../../../components/Calendly/Calendly";
 const plans = [
   {
     id: 1,
-    title: "BASIC",
+    title: "01",
     heading: "Retained Consultant​",
     description: `Discover smooth optimization of day-to-day operations with a dedicated mentor from BDI Capital. A long-term partnership, our team will be available to assist you anytime you need, with anything you need.
 
@@ -19,7 +19,7 @@ const plans = [
   },
   {
     id: 2,
-    title: "GROWTH",
+    title: "02",
     heading: "Operations Review Optimization​​",
     description: `Experience a thorough, one-time audit of your company’s existing framework. Work hand-in-hand with our people for guidance to restructure and give advice on optimizing company by-laws, accounting & tax, corporate governance & housekeeping, compliance, and sales & marketing, among others.
     `,
@@ -114,8 +114,8 @@ function OperationsAndManagement() {
             key={plan.id}
             className="mx-auto flex w-full max-w-md flex-col items-start gap-4 p-2 md:p-8 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
           >
-            <div className="rounded-md bg-black px-4 py-1.5">
-              <p className="text-sm font-bold text-white md:text-sm">
+            <div className="rounded-md   py-1.5">
+              <p className="text-sm font-bold text-gray-500 md:text-sm">
                 {plan.title}
               </p>
             </div>

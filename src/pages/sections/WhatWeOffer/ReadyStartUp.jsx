@@ -65,11 +65,11 @@ function ReadyStartUp() {
                     smooth={true}
                     duration={500}
                     offset={-170} // Adjust the offset as needed
-                    className="text-2xl font-bold text-gray-300 underline cursor-pointer"
+                    className=" text-lg md:text-2xl font-bold text-gray-300 underline cursor-pointer"
                   >
                     {item.title}
                   </SmoothScroll>
-                  <p className={`text-base text-justify ${item.textColor}`}>
+                  <p className={`text-sm md:text-base text-justify ${item.textColor}`}>
                     {item.desc}
                   </p>
                 </div>

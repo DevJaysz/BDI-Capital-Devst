@@ -38,6 +38,7 @@ function OurJourney() {
       <section className=" container mx-auto flex flex-col  items-center justify-center   h-auto min-h-screen  px-8 md:px-28  lg:px-8">
         <TrackRecord />
       </section>
+      <hr className="  dark:border-gray-700 w-full" />
       <section className=" container mx-auto flex flex-col  items-center justify-center   h-auto min-h-screen  px-8 md:px-28  lg:px-8">
         <Timeline />
       </section>

@@ -25,33 +25,42 @@ function WhatWeOffer() {
       <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 -mt-16 lg:-mt-20 ">
         <GetStarted />
       </section>
+      <hr className="  dark:border-gray-700 w-full" />
       <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 ">
         <ReadyStartUp />
       </section>
+      <hr className="  dark:border-gray-700 w-full" />
       <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 ">
         <YourOperations />
       </section>
+      <hr className="  dark:border-gray-700 w-full" />
       <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 ">
         <TimeToExit />
       </section>
+      
       <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 ">
         <BusinessMentorship />
       </section>
-      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 ">
+      
+      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 mt-4 md:mt-0 ">
         <BusinessConsulting />
       </section>
-      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 ">
+     
+      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 mt-4 md:mt-0  ">
         <BusinessAdvisory />
       </section>
-      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 ">
+      
+      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 mt-4 md:mt-0 ">
         <BusinessGovernance />
       </section>
-      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 ">
+       <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 mt-4 md:mt-0">
         <DigitalStrategy />
       </section>
-      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 ">
+     
+      <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 mt-4 md:mt-0">
         <OperationsAndManagement />
       </section>
+     
       <section className=" container mx-auto  flex flex-col items-center justify-center h-auto min-h-screen px-8 ">
         <TransactionAdvisory />
       </section>

@@ -63,7 +63,7 @@ function GetStarted() {
               to={id}
               smooth={true}
               duration={500}
-              offset={-150}
+              offset={-200}
               className="border-2 border-white rounded-full px-4 py-2 md:px-6 md:py-3 text-sm md:text-lg w-full md:w-auto hover:bg-white hover:text-black cursor-pointer transition duration-300"
               data-aos="fade-up"
               data-aos-duration="2500"

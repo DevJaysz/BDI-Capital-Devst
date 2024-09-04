@@ -64,11 +64,11 @@ function TimeToExit() {
                   <p className="text-2xl font-medium">{item.step}</p>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h5 className="text-2xl font-bold text-gray-300 underline">
+                  <h5 className="text-xl md:text-2xl font-bold text-gray-300 underline">
                     {item.title}
                   </h5>
                   <p
-                    className={`text-base text-justify text-gray-400 ${item.textColor}`}
+                    className={`text-sm md:text-base text-justify text-gray-400 ${item.textColor}`}
                   >
                     {item.desc}
                   </p>

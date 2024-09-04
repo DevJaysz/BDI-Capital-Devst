@@ -5,7 +5,7 @@ import Calendly from "../../../components/Calendly/Calendly";
 const plans = [
   {
     id: 1,
-    title: "BASIC",
+    title: "01",
     heading: "M&A Buyer & Seller Side​",
     description: `Enjoy flexible arrangements when we help you buy or sell a business. Available payment options are through company valuations or via success fee upon completion of the deal.
 
@@ -19,7 +19,7 @@ BDI Capital has successfully closed $43.5 million in fundraising transactions fo
   },
   {
     id: 2,
-    title: "GROWTH",
+    title: "02",
     heading: "BDI Business Community​​",
     description: `Break down the barriers between you and the mentors and investors you’re trying to reach. By joining our community, you get access to successful entrepreneurs, investors, and seasoned business mentors from around the world. Through our once a month meetings, you can make the connections you need while getting expert top quality mentorship and advice that can guide you towards business success.
   `,
@@ -30,7 +30,7 @@ BDI Capital has successfully closed $43.5 million in fundraising transactions fo
   },
   {
     id: 3,
-    title: "PREMIUM",
+    title: "03",
     heading: "Wealth Management​",
     description: `Whether you’ve just exited your venture, or need safe and advantageous places to grow your wealth, BDI’s expert team will deliver thoughtful investment advisory services. Our own investments have reached 100x returns.`,
     price: 1000,
@@ -124,8 +124,8 @@ function TransactionAdvisory() {
             key={plan.id}
             className="mx-auto flex w-full max-w-md flex-col items-start gap-4 p-2 md:p-8 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
           >
-            <div className="rounded-md bg-black px-4 py-1.5">
-              <p className="text-sm font-bold text-white md:text-sm">
+            <div className="rounded-md  py-1.5">
+              <p className="text-sm font-bold text-gray-500 md:text-sm">
                 {plan.title}
               </p>
             </div>

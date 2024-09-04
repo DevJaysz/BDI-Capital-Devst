@@ -13,7 +13,7 @@ function BusinessSheet() {
             data-aos="fade-zoom-in"
             data-aos-duration="1000"
           >
-            We handle the backend, so you can focus on the frontend.
+            We handle the back end, so you can focus on the front end.
           </h1>
           <p
             className="pb-6 lg:pb-10  max-w-lg text-sm md:text-base font-light text-gray-300  text-justify"

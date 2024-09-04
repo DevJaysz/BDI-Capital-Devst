@@ -5,7 +5,7 @@ import Calendly from "../../../components/Calendly/Calendly";
 const plans = [
   {
     id: 1,
-    title: "BASIC",
+    title: "01",
     heading: "Accounting System Set-up & Support​",
     description: `We’ll help make sure your books are perfect by teaching you the accounting system of your choice. From inventory and  invoice set up, to understanding your management reports, we’ve got you covered. Continue on with monthly system support, where we guide you as you do your bank reconciliations and receipting. `,
     price: 400,
@@ -15,7 +15,7 @@ const plans = [
   },
   {
     id: 2,
-    title: "GROWTH",
+    title: "02",
     heading: "CFO & Treasury​",
     description: `Organizing finances and other support-services can be overwhelming. It takes too much time and can make any entrepreneur lose sight of the macros. Through our services, we hope to help founders focus on the business, while we take the reins on the back end.`,
     price: 400,
@@ -25,7 +25,7 @@ const plans = [
   },
   {
     id: 3,
-    title: "PREMIUM",
+    title: "03",
     heading: "Corporate Tax Consultation​",
     description: `Confused by corporate taxes? Our team will assist with the ins and outs of corporate taxes. From tax compliance, cross border tax optimization, obtaining tax incentives, and more, we’ll make sure your taxes are up to date.`,
     price: 900,
@@ -120,8 +120,8 @@ function BusinessConsulting() {
             key={plan.id}
             className="mx-auto flex w-full max-w-md flex-col items-start gap-4 p-2 md:p-8 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
           >
-            <div className="rounded-md bg-black px-4 py-1.5">
-              <p className="text-sm font-bold text-white md:text-sm">
+           <div className="rounded-md  py-1.5">
+              <p className="text-sm font-bold text-gray-500 md:text-sm">
                 {plan.title}
               </p>
             </div>

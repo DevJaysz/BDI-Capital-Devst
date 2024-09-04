@@ -68,12 +68,12 @@ function YourOperations() {
                     to={step.step} // Use step.step or step.title as the target ID
                     smooth={true}
                     duration={500}
-                    offset={-150} // Adjust offset as needed to align with the top of the page
-                    className="text-2xl font-bold text-gray-300 cursor-pointer underline"
+                    offset={-250} // Adjust offset as needed to align with the top of the page
+                    className="text-lg md:text-2xl font-bold text-gray-300 cursor-pointer underline"
                   >
                     {step.title}
                   </SmoothScroll>
-                  <p className="text-base text-justify text-gray-400">
+                  <p className="text-sm md:text-base text-justify text-gray-400">
                     {step.desc}
                   </p>
                 </div>

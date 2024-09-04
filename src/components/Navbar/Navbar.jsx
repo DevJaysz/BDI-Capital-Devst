@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoIosMenu, IoIosClose } from "react-icons/io";
-import NavLogo from "../../assets/images/NavBar_Logo.png";
+import NavLogo from "../../assets/images/bdi-white-nobg.png";
 
 function NavBar() {
   const [nav, setNav] = useState(false);
@@ -24,13 +24,13 @@ function NavBar() {
   }, [location]);
 
   return (
-    <nav className="sticky top-0 z-50 shadow-slate-50 bg-[#111111] text-gray-300">
+    <nav className="sticky top-0 z-50 shadow-slate-50 bg-[#222222] text-gray-300">
       <div className="container mx-auto flex justify-between items-center h-16 lg:h-20 px-4 ">
         {/* Navbar Logo */}
         <Link to="/">
           <img
             src={NavLogo}
-            className="w-20 lg:w-32 md:w-24 hover:scale-105 transition-all cursor-pointer"
+            className="w-20 lg:w-40 md:w-24 hover:scale-105 transition-all cursor-pointer"
             alt="Nav Logo"
           />
         </Link>

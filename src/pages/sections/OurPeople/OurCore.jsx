@@ -42,7 +42,7 @@ function OurCoreValues() {
   return (
     <section className="text-center mx-auto">
       <h2
-        className="text-3xl md:text-6xl my-8 font-bold text-[#F0AE4F]"
+        className="text-2xl md:text-6xl my-8 font-bold text-[#F0AE4F]"
         data-aos="fade-in-zoom"
         data-aos-duration="1000"
       >
@@ -63,7 +63,7 @@ function OurCoreValues() {
         ))}
       </div>
       <h2
-        className="text-3xl mt-8 text-center text-gray-300"
+        className="text-base md:text-3xl mt-8 text-center text-gray-300"
         data-aos="fade-up"
         data-aos-duration="2500"
       >

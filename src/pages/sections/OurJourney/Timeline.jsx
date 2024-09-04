@@ -1,82 +1,84 @@
-import React, { useState } from "react";
+import React from 'react';
 
 const Timeline = () => {
+  const qualifications = [
+    {
+      date: "2016",
+      description: "Invested $100,000 in Buskowitz Energy (Current value of investment $600,000)."
+    },
+    {
+      date: "2017",
+      description: "Raised $2,500,000 in equity, and $1,000,000 in debt."
+    },
+    {
+      date: "2018",
+      description: "Raised $2,000,000 in equity."
+    },
+    {
+      date: "2019",
+      description: "Raised $3,000,000 in equity."
+    },
+    {
+      date: "2021",
+      description: "Raised $8,500,000 in equity, and $2,000,000 in debt."
+    },
+    {
+      date: "2022",
+      description: "Raised $1,500,000 in equity, and $3,000,000 in debt."
+    },
+    {
+      date: "2023",
+      description: "Raised $20,000,000 in equity, and was Lead Financial Adviser in $40,000,000 syndicate deal with international development banks."
+    },
+    {
+      date: "2024",
+      description: "Raised $28,000,000 in equity."
+    },
+  ];
+
   return (
-    <div className="container mx-auto mt-20">
-      <div className="text-center">
-        <h2 className="text-4xl font-bold text-yellow-500 mb-4">
-          OUR MILESTONES
-        </h2>
-      </div>
-      <div className="flex justify-between items-center mt-10">
-        <div className="flex items-center">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
-        </div>
-        <div className="flex justify-between w-full">
-          <div className="flex flex-col items-center">
-            <h3 className="text-lg font-bold text-white mb-2">2019</h3>
-            <p className="text-gray-400">Raised $3,000,000 in equity</p>
+    <div id="/Investments">
+      <h2 className="text-3xl md:text-3xl lg:text-5xl xl:text-7xl font-bold text-center text-[#F0AE4F] mb-6 md:mb-12 xl:mb-4" data-aos="fade-zoom-in"
+        data-aos-duration="1000">
+       OUR INVESTMENTS
+      </h2>
+      <div className="mx-auto max-w-xl">
+        {qualifications.map((item, idx) => (
+          <div key={idx} className="qualification-data grid grid-cols-[1fr_max-content_1fr] gap-x-6 ">
+            {idx % 2 === 0 ? (
+              <>
+                <div className="text-end" data-aos="zoom-in-up">
+                  <h3 className=" font-medium text-base lg:text-lg xl:text-2xl text-[#F0AE4F] ">{item.date}</h3>
+                  <p className="text-xs md:text-base text-gray-300">
+                    {item.description}
+                  </p>
+                </div>
+                <div>
+                  <span className=" w-[13px] h-[13px] bg-gray-400 rounded-full inline-block" data-aos="fade-down"></span>
+                  {idx < qualifications.length - 1 && (
+                    <span className=" w-[1.5px] h-full max-h-lvh bg-gray-400 block transform translate-x-[6px] translate-y-[-7px] "></span>
+                  )}
+                </div>
+              </>
+            ) : (
+              <>
+                <div></div>
+                <div>
+                  <span className=" w-[13px] h-[13px] bg-gray-400 rounded-full inline-block" data-aos="fade-down"></span>
+                  {idx < qualifications.length - 1 && (
+                    <span className=" w-[1.5px] h-full bg-gray-400 block transform translate-x-[6px] translate-y-[-7px]"></span>
+                  )}
+                </div>
+                <div data-aos="zoom-in-up">
+                <h3 className=" font-medium text-base lg:text-lg xl:text-2xl  text-[#F0AE4F] ">{item.date}</h3>
+                 <p className="text-xs md:text-base  text-gray-300">
+                    {item.description}
+                  </p>
+                </div>
+              </>
+            )}
           </div>
-          <div className="flex flex-col items-center">
-            <h3 className="text-lg font-bold text-white mb-2">2021</h3>
-            <p className="text-gray-400">
-              Raised $8,500,000 in equity,
-              <br /> and $2,000,000 in debt
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <h3 className="text-lg font-bold text-white mb-2">2022</h3>
-            <p className="text-gray-400">
-              Raised $1,500,000 in equity,
-              <br /> and $3,000,000 in debt
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <h3 className="text-lg font-bold text-white mb-2">2023</h3>
-            <p className="text-gray-400">
-              Raised $20,000,000 in
-              <br /> equity, and was Lead Financial
-              <br /> Adviser in $40,000,000
-              <br /> syndicate deal with
-              <br /> international development
-              <br /> banks
-            </p>
-          </div>
-        </div>
-        <div className="flex items-center">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M9 18l6-6-6-6" />
-          </svg>
-        </div>
-      </div>
-      <div className="flex justify-center mt-10">
-        <div className="h-1 w-full bg-gray-700"></div>
-      </div>
-      <div className="flex justify-center mt-4">
-        <div className="h-4 w-4 rounded-full bg-white"></div>
-        <div className="h-4 w-4 rounded-full bg-white mx-2"></div>
-        <div className="h-4 w-4 rounded-full bg-white"></div>
-        <div className="h-4 w-4 rounded-full bg-white mx-2"></div>
+        ))}
       </div>
     </div>
   );

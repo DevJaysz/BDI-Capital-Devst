@@ -5,7 +5,7 @@ import Calendly from "../../../components/Calendly/Calendly";
 const plans = [
   {
     id: 1,
-    title: "BASIC",
+    title: "01",
     heading: "Human Resource Administration​​",
     description: `Do you have the right HR policies? Is all your documentation up to date? We’ll help create the right policies, processes, and procedures; write a code of conduct aligned with your culture; comply with workplace regulations, and more!`,
     price: 400,
@@ -15,7 +15,7 @@ const plans = [
   },
   {
     id: 2,
-    title: "GROWTH",
+    title: "02",
     heading: "Payroll & Statutory Benefits​",
     description: `Monthly payroll and benefits filing can be dizzying, especially when making sure it tallies with your accounting system. Fear not. BDI’s expert team can help you pay your employees on time, file their benefits, and align it with your books!`,
     price: 200,
@@ -25,7 +25,7 @@ const plans = [
   },
   {
     id: 3,
-    title: "PREMIUM",
+    title: "03",
     heading: "Performance Management​",
     description: `Keeping track of employee performance can be tedious. Whether it be clarifying job responsibilities, highlighting priorities and performance expectations, and roadmapping an individual’s career journey in the company, BDI’s continuous process of communication helps align your employees with your company’s goals.(Executive Performance Coaching also available.)`,
     price: 1000,
@@ -121,8 +121,8 @@ function BusinessAdvisory() {
             key={plan.id}
             className="mx-auto flex w-full max-w-md flex-col items-start gap-4 p-2 md:p-8 rounded-md border border-neutral-800 bg-neutral-900/50 shadow-lg"
           >
-            <div className="rounded-md bg-black px-4 py-1.5">
-              <p className="text-sm font-bold text-white md:text-sm">
+            <div className="rounded-md  py-1.5">
+              <p className="text-sm font-bold text-gray-500 md:text-sm">
                 {plan.title}
               </p>
             </div>
