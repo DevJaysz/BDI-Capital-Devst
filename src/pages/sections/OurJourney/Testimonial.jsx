@@ -64,7 +64,7 @@ const testimonials = [
     image: Luca,
     feedback: `BDI effectively serves the purpose of offering
      solutions to SME's and entrepreneurs facing the classic 
-     challenges that come with running a business`,
+     challenges that come with running a business.`,
   },
 ];
 
