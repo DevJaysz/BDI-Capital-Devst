@@ -3,7 +3,7 @@ import { RiArrowLeftWideFill, RiArrowRightWideFill } from "react-icons/ri";
 import Shingo from "../../../assets/images/Shingo-1-269x300.png";
 import Jordan from "../../../assets/images/Jordan.png";
 import Jamie from "../../../assets/images/Jamie.jpg";
-import Luca from "../../../assets/images/Luca.jpg";
+import Luca from "../../../assets/images/Luca.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
