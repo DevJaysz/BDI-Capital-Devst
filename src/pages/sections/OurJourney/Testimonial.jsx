@@ -3,6 +3,7 @@ import { RiArrowLeftWideFill, RiArrowRightWideFill } from "react-icons/ri";
 import Shingo from "../../../assets/images/Shingo-1-269x300.png";
 import Jordan from "../../../assets/images/Jordan.png";
 import Jamie from "../../../assets/images/Jamie.jpg";
+import Luca from "../../../assets/images/Luca.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -56,6 +57,14 @@ const testimonials = [
       <br />
       Without a doubt, I would strongly recommend BDI Capital to fellow entrepreneurs and business
       owners who are seeking innovative perspectives and expert guidance.`,
+  },
+  {
+    name: "Luca Galli",
+    title: "Founder & CEO, Pizo Italian Square Pizza Inc.",
+    image: Luca,
+    feedback: `BDI effectively serves the purpose of offering
+     solutions to SME's and entrepreneurs facing the classic 
+     challenges that come with running a business`,
   },
 ];
 
