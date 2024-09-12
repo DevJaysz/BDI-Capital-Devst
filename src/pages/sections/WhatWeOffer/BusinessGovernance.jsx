@@ -19,8 +19,7 @@ const plans = [
     id: 2,
     title: "02",
     heading: "Corporate Secretary Services​",
-    description: `Monthly payroll and benefits filing can be dizzying, especially when making sure it tallies with your accounting system. Fear not. BDI’s expert team can help you pay your employees on time, file their benefits, and align it with your books!
-  `,
+    description: `Take a backseat as we assist you with your required corporate housekeeping.`,
     price: 200,
     pricePeriod: "/starting",
     buttonText: "Book Schedule",
@@ -30,9 +29,10 @@ const plans = [
     id: 3,
     title: "03",
     heading: "Performance Management​",
-    description: `Keeping track of employee performance can be tedious. Whether it be clarifying job responsibilities, highlighting priorities and performance expectations, and roadmapping an individual’s career journey in the company, BDI’s continuous process of communication helps align your employees with your company’s goals.(Executive Performance Coaching also available.)`,
-    price: 1000,
-    pricePeriod: "/starting per month",
+    description: `We handle your application and provide you with an address in the epicenter of economic activity–the central business district of Makati city.
+`,
+    price: 490,
+    pricePeriod: "/one time fee",
     buttonText: "Book Schedule",
     calendlyUrl: "https://calendly.com/rachel-bdi",
   },
@@ -115,10 +115,10 @@ function BusinessGovernance() {
         </h2>
       </div>
       <div className="rounded-md  py-1.5">
-              <p className="text-sm font-bold text-gray-400 md:text-sm">
-                {plans.title}
-              </p>
-            </div>
+        <p className="text-sm font-bold text-gray-400 md:text-sm">
+          {plans.title}
+        </p>
+      </div>
       <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-1 lg:grid-cols-3">
         {plans.map((plan) => (
           <div
