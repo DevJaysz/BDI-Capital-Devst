@@ -4,6 +4,7 @@ import Shingo from "../../../assets/images/Shingo-1-269x300.png";
 import Jordan from "../../../assets/images/Jordan.png";
 import Jamie from "../../../assets/images/Jamie.jpg";
 import Luca from "../../../assets/images/Luca.png";
+import Manoj from "../../../assets/images/Manoj.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -65,6 +66,22 @@ const testimonials = [
     feedback: `BDI effectively serves the purpose of offering
      solutions to SME's and entrepreneurs facing the classic 
      challenges that come with running a business.`,
+  },
+  {
+    name: "Manoj Dhamwani",
+    title: "Wealth Management",
+    image: Manoj,
+    feedback: `Working with BDI has been a great experience, both professional and personally.
+      They took the time  to understand my goals, risk, tolerance and long term plans;
+      <br />
+      crafting and personalized investment strategy that perfectly suits my needs.
+      <br />
+      <br />
+      They Explain complex financial concepts in a way that is easy to understand, making sure that I am always 
+      comfortable with the decisions being made. 
+      <br />
+      <br />
+      BDI has been instrumental in helping me achieve my financial goals and I am grateful for their time.`,
   },
 ];
 
