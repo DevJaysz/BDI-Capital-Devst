@@ -5,6 +5,7 @@ import Jordan from "../../../assets/images/Jordan.png";
 import Jamie from "../../../assets/images/Jamie.jpg";
 import Luca from "../../../assets/images/Luca.png";
 import Manoj from "../../../assets/images/Manoj.jpg";
+import Jesse from "../../../assets/images/Jesse.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -83,6 +84,17 @@ const testimonials = [
       <br />
       BDI has been instrumental in helping me achieve my financial goals and I am grateful for their time.`,
   },
+  {
+    name: "Jesse Trinh",
+    title: "President, Ovation Encore Philippines Inc. ",
+    title2: "Head of International Business, O3 Collective Pty Ltd",
+    image: Jesse,
+    feedback: `I think all businesses and entrepreneurs need to work with BDI. Whether you're just starting out, 
+        looking to grow, wanting to enter the APAC region, or need administrative or strategic support, they're the perfect team.
+      <br />
+      <br />
+      They make your problems their problems and then they solve them for you. For entrepreneurs and business owners, that's just invaluable.`,
+  },
 ];
 
 function Testimonial() {
@@ -143,6 +155,7 @@ function Testimonial() {
                   </p>
                   <p className="text-[#F0AE4F] text-sm md:text-base">
                     {testimonial.title}
+                    {testimonial.title2}
                   </p>
                   <p
                     className="mt-4 text-xs lg:text-sm"
