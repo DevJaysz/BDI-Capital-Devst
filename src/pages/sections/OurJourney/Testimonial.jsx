@@ -155,6 +155,8 @@ function Testimonial() {
                   </p>
                   <p className="text-[#F0AE4F] text-sm md:text-base">
                     {testimonial.title}
+                  </p>
+                  <p className="text-[#F0AE4F] text-sm md:text-base">
                     {testimonial.title2}
                   </p>
                   <p
