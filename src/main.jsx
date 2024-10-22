@@ -12,14 +12,15 @@ import OurPeople from "./pages/OurPeople.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import MeetOutMentors from "./pages/sections/OurPeople/MeetOutMentors.jsx";
 import Policy from "./pages/Policy.jsx";
-import Ebooks from "./pages/Ebooks/Ebooks.jsx";
+import Ebooks from "./pages/Ebooks.jsx";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Terms from "./pages/Terms.jsx";
 import { Helmet } from "react-helmet";
 import NavMenu from "./components/Ebooks/NavMenu.jsx";
 import NavFooter from "./components/Ebooks/NavFooter.jsx";
+import Cart from "./pages/Ebooks/Cart.jsx";
 
 const Layout = () => {
   useEffect(() => {
@@ -46,13 +47,25 @@ const Layout = () => {
   );
 };
 const EbooksLayout = () => {
+
+  const [isCartOpen, setIsCartOpen] = useState (false);
+  const toggleCart = () => {
+    setIsCartOpen((prev) => !prev);
+  };
+  const closeCart = () => {
+    setIsCartOpen(false); // Close cart by setting the state to false
+  };
+
+
   useEffect(() => {
     Aos.init(); // Initialize AOS animations on mount
   }, []);
 
   return (
     <div>
-      <NavMenu /> {/* Custom navigation menu for Ebooks page */}
+      <NavMenu toggleCart={toggleCart} /> {/* Pass toggleCart function */}
+      {isCartOpen && <Cart />} {/* Render Cart if open */}
+      {isCartOpen && <Cart closeCart={closeCart} />} {/* Pass closeCart to Cart */}
       <Outlet /> {/* Content for the child route */}
       <NavFooter /> {/* Custom footer for Ebooks page */}
     </div>
