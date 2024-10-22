@@ -86,7 +86,7 @@ const testimonials = [
   },
   {
     name: "Jesse Trinh",
-    title: "President, Ovation Encore Philippines Inc. ",
+    title: "President, Ovation Encore Philippines Inc.",
     title2: "Head of International Business, O3 Collective Pty Ltd",
     image: Jesse,
     feedback: `I think all businesses and entrepreneurs need to work with BDI. Whether you're just starting out, 

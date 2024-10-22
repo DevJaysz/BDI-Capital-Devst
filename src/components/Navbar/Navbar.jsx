@@ -96,6 +96,22 @@ function NavBar() {
               ></span>
             </Link>
           </li>
+          <li className="relative group">
+            <Link
+              to="/Ebooks"
+              target="_blank"
+              className={`p-2 text-xs lg:text-base ${
+                isActive("/Ebooks") ? "text-[#F0AE4F]" : "text-gray-300"
+              }`}
+            >
+              E-BOOKS
+              <span
+                className={`block h-0.5 bg-[#F0AE4F] absolute left-0 bottom-0 top-12 transition-all duration-300 ${
+                  isActive("/Ebooks") ? "w-full" : "w-0"
+                }`}
+              ></span>
+            </Link>
+          </li>
         </ul>
         {/* Navbar Button */}
         <Link

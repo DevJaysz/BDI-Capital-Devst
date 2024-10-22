@@ -12,11 +12,14 @@ import OurPeople from "./pages/OurPeople.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import MeetOutMentors from "./pages/sections/OurPeople/MeetOutMentors.jsx";
 import Policy from "./pages/Policy.jsx";
+import Ebooks from "./pages/Ebooks/Ebooks.jsx";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Terms from "./pages/Terms.jsx";
 import { Helmet } from "react-helmet";
+import NavMenu from "./components/Ebooks/NavMenu.jsx";
+import NavFooter from "./components/Ebooks/NavFooter.jsx";
 
 const Layout = () => {
   useEffect(() => {
@@ -42,12 +45,25 @@ const Layout = () => {
     </div>
   );
 };
+const EbooksLayout = () => {
+  useEffect(() => {
+    Aos.init(); // Initialize AOS animations on mount
+  }, []);
+
+  return (
+    <div>
+      <NavMenu /> {/* Custom navigation menu for Ebooks page */}
+      <Outlet /> {/* Content for the child route */}
+      <NavFooter /> {/* Custom footer for Ebooks page */}
+    </div>
+  );
+};
 
 // Define the router configuration
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <Layout />, // Main layout for other pages
     children: [
       {
         path: "/",
@@ -57,7 +73,6 @@ const router = createBrowserRouter([
         path: "/App",
         element: <App />,
       },
-
       {
         path: "/ThriveWithUs",
         element: <ThriveWithUs />,
@@ -85,6 +100,19 @@ const router = createBrowserRouter([
       {
         path: "/Terms",
         element: <Terms />,
+      },
+    ],
+  },
+
+  // Separate route for Ebooks with a different UI/layout
+
+  {
+    path: "/Ebooks",
+    element: <EbooksLayout />, // This is a separate layout for the Ebooks page
+    children: [
+      {
+        path: "/Ebooks",
+        element: <Ebooks />,
       },
     ],
   },
