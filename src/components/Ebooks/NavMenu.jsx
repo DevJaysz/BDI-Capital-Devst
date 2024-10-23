@@ -3,7 +3,8 @@ import React from "react";
 // Replace the import statement with your custom cart SVG icon if you have one
 import { PiShoppingCartBold } from "react-icons/pi";
 
-function NavMenu({toggleCart}) { //Accepts toggleCart as prop
+function NavMenu({ toggleCart }) {
+  //Accepts toggleCart as prop
   return (
     <section className="mx-auto sticky top-0 z-50">
       {/* Navbar */}
@@ -27,9 +28,18 @@ function NavMenu({toggleCart}) { //Accepts toggleCart as prop
 
           {/* CartIcon */}
           <div className="hidden xl:flex items-center space-x-5">
-            {[{ icon: <PiShoppingCartBold className="h-6 w-6" />, notification: true }].map(({ icon, notification }, index) => (
-              <a onClick={toggleCart} 
-                key={index} className="hover:text-gray-200 relative" href="#">
+            {[
+              {
+                icon: <PiShoppingCartBold className="h-6 w-6" />,
+                notification: true,
+              },
+            ].map(({ icon, notification }, index) => (
+              <a
+                onClick={toggleCart}
+                key={index}
+                className="hover:text-gray-200 relative"
+                href="#"
+              >
                 {icon}
                 {notification && (
                   <span className="flex absolute -mt-5 ml-4">
@@ -60,8 +70,8 @@ function NavMenu({toggleCart}) { //Accepts toggleCart as prop
               />
             </svg>
             <span className="flex absolute -mt-5 ml-4">
-              <span className="animate-ping absolute h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-              <span className="relative h-3 w-3 rounded-full bg-pink-500"></span>
+              <span className="animate-ping absolute h-3 w-3 rounded-full bg-[#F0AE4F] opacity-75"></span>
+              <span className="relative h-3 w-3 rounded-full bg-[#F0AE4F]"></span>
             </span>
           </a>
           <a href="#">
