@@ -2,10 +2,13 @@ import { createRoot } from "react-dom/client";
 import { useEffect, useState } from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import NavBar from "./components/Navbar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import App from "./App.jsx";
 import "./index.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import OurJourney from "./pages/OurJourney.jsx";
 import ThriveWithUs from "./pages/ThriveWithUs.jsx";
 import WhatWeOffer from "./pages/WhatWeOffer.jsx";
@@ -13,10 +16,7 @@ import OurPeople from "./pages/OurPeople.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import MeetOutMentors from "./pages/sections/OurPeople/MeetOutMentors.jsx";
 import Policy from "./pages/Policy.jsx";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import Terms from "./pages/Terms.jsx";
-import { Helmet } from "react-helmet";
 import NavFooter from "./components/Ebooks/NavFooter.jsx";
 import NavBook from "./components/Ebooks/Navbook.jsx";
 import Cart from "./pages/Ebooks/LandingPage/Cart.jsx";
@@ -53,11 +53,62 @@ const Layout = () => {
 
 const EbooksLayout = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]); // Cart items state
+
   const toggleCart = () => {
     setIsCartOpen((prev) => !prev);
   };
   const closeCart = () => {
     setIsCartOpen(false); // Close cart by setting the state to false
+  };
+
+  // Add an item to the cart
+  const addToCart = (product) => {
+    setCartItems((prevItems) => {
+      const existingProductIndex = prevItems.findIndex(
+        (item) => item.id === product.id
+      );
+
+      if (existingProductIndex >= 0) {
+        // Product already exists, increase quantity
+        const updatedItems = [...prevItems];
+        updatedItems[existingProductIndex].quantity += 1; // Increase quantity by 1
+        return updatedItems;
+      } else {
+        // Product does not exist, add it with quantity 1
+        return [...prevItems, { ...product, quantity: 1 }];
+      }
+    });
+  };
+
+  // Increase the quantity of a specific product
+  const increaseQuantity = (productId) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+  // Decrease the quantity of a specific product
+  const decreaseQuantity = (productId) => {
+    setCartItems(
+      (prevItems) =>
+        prevItems
+          .map((item) =>
+            item.id === productId && item.quantity > 1
+              ? { ...item, quantity: item.quantity - 1 }
+              : item
+          )
+          .filter((item) => item.quantity > 0) // Remove item if quantity becomes 0
+    );
+  };
+
+  //Remove an item from the cart
+  const removeFromCart = (productId) => {
+    console.log("Removing product with id:", productId); // Debugging output
+    setCartItems((prevItems) =>
+      prevItems.filter((item) => item.id !== productId)
+    );
   };
 
   useEffect(() => {
@@ -67,11 +118,19 @@ const EbooksLayout = () => {
   return (
     <div>
       <NavBook toggleCart={toggleCart} />
-      {/* Pass toggleCart function */}
-      {isCartOpen && <Cart closeCart={closeCart} />}{" "}
+      {isCartOpen && (
+        <Cart
+          closeCart={closeCart} // Pass this function
+          cartItems={cartItems} // Pass this function
+          removeFromCart={removeFromCart} // Pass this function
+          increaseQuantity={increaseQuantity} // Pass this function
+          decreaseQuantity={decreaseQuantity} // Pass this function
+        />
+      )}
       {/* Render Cart if open and pass closeCart to Cart */}
-      <Outlet /> {/* Content for the child route */}
-      <NavFooter /> {/* Custom footer for Ebooks page */}
+      <Outlet context={{ addToCart, cartItems }} />
+      {/* Pass addToCart and cartItems to the child routes */}
+      <NavFooter />
     </div>
   );
 };

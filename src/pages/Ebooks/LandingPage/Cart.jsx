@@ -1,12 +1,15 @@
 import React from "react";
 
-function Cart({ closeCart }) {
-  const cartItems = []; // Assuming cart items are fetched or passed as props
-
+function Cart({
+  closeCart,
+  cartItems,
+  removeFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+}) {
   return (
     <div className="relative z-50" role="dialog" aria-modal="true">
       <div className="fixed inset-0 bg-black bg-opacity-75"></div>
-
       <div className="fixed inset-0 flex justify-end overflow-hidden">
         <div className="w-screen max-w-md pointer-events-auto bg-[#222222] shadow-xl">
           <div className="flex flex-col h-full overflow-y-scroll">
@@ -41,10 +44,57 @@ function Cart({ closeCart }) {
                   Your cart is empty
                 </li>
               ) : (
-                // Map through cart items here if available
-                cartItems.map((item) => (
-                  <li key={item.id} className="flex py-6">
-                    {/* Cart item details */}
+                cartItems.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex py-6 items-center justify-between"
+                  >
+                    <img
+                      className="h-24 w-24 flex-shrink-0 rounded-md border border-gray-200"
+                      src={item.image}
+                      alt={item.name}
+                    />
+                    <div className="ml-4 flex flex-col justify-between w-full">
+                      <div className="flex justify-between">
+                        <div>
+                          <h3 className="text-sm text-gray-300">{item.name}</h3>
+                          <p className="text-sm text-gray-400">{item.author}</p>
+                          <div className="flex items-center space-x-2 mt-2">
+                            {/* Decrease quantity button */}
+                            <button
+                              className="text-gray-300 bg-gray-700 px-2 py-1 rounded"
+                              onClick={() => decreaseQuantity(item.id)}
+                            >
+                              -
+                            </button>
+
+                            {/* Product quantity */}
+                            <p className="text-sm text-gray-400">
+                              {item.quantity}
+                            </p>
+
+                            {/* Increase quantity button */}
+                            <button
+                              className="text-gray-300 bg-gray-700 px-2 py-1 rounded"
+                              onClick={() => increaseQuantity(item.id)}
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between mt-2">
+                        <p className="text-sm text-gray-300">
+                          ${(item.price * item.quantity).toFixed(2)}
+                        </p>
+                        <button
+                          className="text-sm text-red-500 hover:text-red-700"
+                          onClick={() => removeFromCart(item.id)}
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
                   </li>
                 ))
               )}
@@ -53,8 +103,15 @@ function Cart({ closeCart }) {
             <div className="border-t border-gray-200 p-6">
               <div className="flex justify-between text-base font-medium text-gray-300">
                 <p>Subtotal</p>
-                <p>${cartItems.length > 0 ? "0.00" : "0.00"}</p>{" "}
-                {/* Update subtotal dynamically */}
+                <p>
+                  $
+                  {cartItems
+                    .reduce(
+                      (total, item) => total + item.price * item.quantity,
+                      0
+                    )
+                    .toFixed(2)}
+                </p>
               </div>
               <p className="text-sm text-gray-500 mt-1">
                 Shipping and taxes calculated at checkout.

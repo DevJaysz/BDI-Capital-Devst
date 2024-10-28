@@ -172,12 +172,12 @@ function Testimonial() {
         {/* Custom Navigation Buttons */}
         <div className="absolute top-1/2 transform -translate-y-1/2 left-0 hidden lg:flex ">
           <button className="swiper-button-prev">
-            <RiArrowLeftWideFill size={30} />
+            <RiArrowLeftWideFill size={30} className="text-[#F0AE4F]" />
           </button>
         </div>
         <div className="absolute top-1/2 transform -translate-y-1/2 right-0 hidden lg:flex ">
           <button className="swiper-button-next">
-            <RiArrowRightWideFill size={30} />
+            <RiArrowRightWideFill size={30} className="text-[#F0AE4F]" />
           </button>
         </div>
       </div>
