@@ -25,6 +25,7 @@ import Financial from "./pages/Ebooks/Financial.jsx";
 import Managerial from "./pages/Ebooks/Managerial.jsx";
 import Taxation from "./pages/Ebooks/Taxation.jsx";
 import Auditing from "./pages/Ebooks/Auditing.jsx";
+import Checkout from "./pages/Ebooks/LandingPage/Checkout.jsx";
 
 const Layout = () => {
   useEffect(() => {
@@ -203,6 +204,10 @@ const router = createBrowserRouter([
       {
         path: "Auditing", // Relative path for /Ebooks/Financial
         element: <Auditing />,
+      },
+      {
+        path: "Checkout", // Relative path for /Ebooks/Checkout
+        element: <Checkout />,
       },
     ],
   },

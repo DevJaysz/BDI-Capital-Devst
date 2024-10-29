@@ -73,8 +73,8 @@ function ProductGrid() {
         </div>
 
         {/* Swiper Section */}
-        <div className="relative">
-          <Swiper
+        <div className="relative ">
+          <Swiper 
             modules={[Navigation, Autoplay]}
             spaceBetween={20}
             slidesPerView={2}
@@ -90,8 +90,8 @@ function ProductGrid() {
             }}
           >
             {products.map((product) => (
-              <SwiperSlide key={product.id}>
-                <div className="relative">
+              <SwiperSlide key={product.id} >
+                <div className="relative p-2">
                   <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80 transition-transform duration-300 transform hover:scale-105">
                     <img
                       src={product.image}
