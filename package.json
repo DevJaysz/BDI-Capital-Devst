@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@stripe/stripe-js": "^4.9.0",
     "aos": "^2.3.4",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
     "firebase": "^11.0.1",
     "react": "^18.3.1",
     "react-calendly": "^4.3.1",
@@ -23,6 +27,7 @@
     "react-scroll": "^1.9.0",
     "react-simple-typewriter": "^5.0.1",
     "react-typed": "^2.0.12",
+    "stripe": "^17.2.1",
     "swiper": "^11.1.11",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
