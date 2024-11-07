@@ -21,7 +21,7 @@ import NavFooter from "./components/Ebooks/NavFooter.jsx";
 import NavBook from "./components/Ebooks/Navbook.jsx";
 import Cart from "./pages/Ebooks/LandingPage/Cart.jsx";
 import Ebooks from "./pages/Ebooks/Ebooks.jsx";
-import Financial from "./pages/Ebooks/Financial.jsx";
+import Finance from "./pages/Ebooks/Finance.jsx";
 import Managerial from "./pages/Ebooks/Managerial.jsx";
 import Taxation from "./pages/Ebooks/Taxation.jsx";
 import Auditing from "./pages/Ebooks/Auditing.jsx";
@@ -90,21 +90,21 @@ const EbooksLayout = () => {
       )
     );
   };
+
   // Decrease the quantity of a specific product
   const decreaseQuantity = (productId) => {
-    setCartItems(
-      (prevItems) =>
-        prevItems
-          .map((item) =>
-            item.id === productId && item.quantity > 1
-              ? { ...item, quantity: item.quantity - 1 }
-              : item
-          )
-          .filter((item) => item.quantity > 0) // Remove item if quantity becomes 0
+    setCartItems((prevItems) =>
+      prevItems
+        .map((item) =>
+          item.id === productId && item.quantity > 1
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0) // Remove item if quantity becomes 0
     );
   };
 
-  //Remove an item from the cart
+  // Remove an item from the cart
   const removeFromCart = (productId) => {
     console.log("Removing product with id:", productId); // Debugging output
     setCartItems((prevItems) =>
@@ -190,8 +190,8 @@ const router = createBrowserRouter([
         element: <Ebooks />,
       },
       {
-        path: "Financial", // Relative path for /Ebooks/Financial
-        element: <Financial />,
+        path: "Finance", // Relative path for /Ebooks/Financial
+        element: <Finance />,
       },
       {
         path: "Managerial", // Relative path for /Ebooks/Financial
@@ -204,10 +204,6 @@ const router = createBrowserRouter([
       {
         path: "Auditing", // Relative path for /Ebooks/Financial
         element: <Auditing />,
-      },
-      {
-        path: "Checkout", // Relative path for /Ebooks/Checkout
-        element: <Checkout />,
       },
     ],
   },

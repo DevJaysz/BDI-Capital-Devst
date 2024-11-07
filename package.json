@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@stripe/react-stripe-js": "^2.8.1",
     "@stripe/stripe-js": "^4.9.0",
     "aos": "^2.3.4",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "firebase": "^11.0.1",
     "react": "^18.3.1",
@@ -27,7 +29,7 @@
     "react-scroll": "^1.9.0",
     "react-simple-typewriter": "^5.0.1",
     "react-typed": "^2.0.12",
-    "stripe": "^17.2.1",
+    "stripe": "^17.3.1",
     "swiper": "^11.1.11",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
@@ -45,5 +47,18 @@
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.9",
     "vite": "^5.4.0"
-  }
+  },
+  "description": "BDI Capital Dev_site",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevJaysz/BDI-Capital-Devst.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevJaysz/BDI-Capital-Devst/issues"
+  },
+  "homepage": "https://github.com/DevJaysz/BDI-Capital-Devst#readme"
 }
