@@ -1,3 +1,4 @@
+import { loadStripe } from "@stripe/stripe-js";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -9,54 +10,65 @@ function Cart({
   decreaseQuantity,
 }) {
   const [notification, setNotification] = useState(false);
+  const [loading, setLoading] = useState(false); // To manage checkout loading state
 
-  // Checkout handler
   const handleCheckout = async () => {
-    closeCart(); // Close the cart
+    setLoading(true); // Set loading state to true
 
-    // Prepare the cart data for the checkout session
     const items = cartItems.map((item) => ({
       name: item.name,
       description: item.author,
       price: item.price,
       quantity: item.quantity,
+      image: item.image, // Ensure this is passed to the backend
     }));
 
     try {
-      // Call backend to create Stripe checkout session
-      const response = await fetch("http://localhost:5000/create-checkout-session", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ items: items }), // Pass items to backend
-      });
+      // Adjust fetch URL based on environment (development or production)
+      const response = await fetch(
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:4242/phpbackend/create-checkout-session.php" // Local backend for dev
+          : "/phpbackend/create-checkout-session.php", // Production backend
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ items }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to create checkout session.");
       }
 
       const data = await response.json();
-      const { id } = data; // Get the session ID from the response
+      if (data.error) {
+        throw new Error(data.error); // If error returned from backend, throw it
+      }
 
-      // Redirect to Stripe Checkout page
-      const stripe = window.Stripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY); // Use correct environment variable
+      const { id } = data;
 
+      // Ensure Stripe public key is loaded correctly
+      const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
       const { error } = await stripe.redirectToCheckout({ sessionId: id });
 
       if (error) {
         console.error("Error:", error);
-        alert(error.message); // Show error message if something went wrong
+        alert(
+          "There was an error during the checkout process. Please try again."
+        );
       }
     } catch (error) {
       console.error("Error during checkout:", error);
       alert("An error occurred. Please try again.");
+    } finally {
+      setLoading(false); // End loading after the process
     }
   };
 
   return (
     <div className="relative z-50" role="dialog" aria-modal="true">
-      {/* Notification for item added to cart */}
       {notification && (
         <div className="fixed top-0 left-1/2 transform -translate-x-1/2 mt-4 p-4 bg-green-600 text-white rounded-md shadow-lg">
           Item added to cart!
@@ -102,7 +114,10 @@ function Cart({
                 </li>
               ) : (
                 cartItems.map((item) => (
-                  <li key={item.id} className="flex py-6 items-center justify-between">
+                  <li
+                    key={item.id}
+                    className="flex py-6 items-center justify-between"
+                  >
                     <img
                       className="h-24 w-24 flex-shrink-0 rounded-md border border-gray-200"
                       src={item.image}
@@ -121,7 +136,9 @@ function Cart({
                             >
                               -
                             </button>
-                            <p className="text-sm text-gray-400">{item.quantity}</p>
+                            <p className="text-sm text-gray-400">
+                              {item.quantity}
+                            </p>
                             <button
                               className="text-gray-300 bg-gray-700 px-2 py-1 rounded"
                               onClick={() => increaseQuantity(item.id)}
@@ -153,31 +170,27 @@ function Cart({
               <div className="flex justify-between text-base font-medium text-gray-300">
                 <p>Subtotal</p>
                 <p>
-                  $${
-                    cartItems.reduce(
+                  $
+                  {cartItems
+                    .reduce(
                       (total, item) => total + item.price * item.quantity,
                       0
-                    ).toFixed(2)
-                  }
+                    )
+                    .toFixed(2)}
                 </p>
               </div>
               <div className="mt-6 flex">
                 <button
                   onClick={handleCheckout}
                   className={`w-full block text-center rounded-md px-6 py-3 text-white ${
-                    cartItems.length === 0
+                    cartItems.length === 0 || loading
                       ? "bg-gray-500 cursor-not-allowed"
                       : "bg-indigo-600 hover:bg-indigo-700"
                   }`}
-                  disabled={cartItems.length === 0}
+                  disabled={cartItems.length === 0 || loading} // Disable while loading
                 >
-                  Checkout
+                  {loading ? "Processing..." : "Checkout"}
                 </button>
-              </div>
-              <div className="text-center mt-6 text-sm text-gray-500">
-                <Link to="/" className="font-medium text-indigo-600 hover:text-indigo-500">
-                  Continue Shopping &rarr;
-                </Link>
               </div>
             </div>
           </div>

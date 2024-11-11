@@ -4,7 +4,7 @@ import { IoIosMenu, IoIosClose } from "react-icons/io";
 import NavLogo from "../../assets/images/bdi-white-nobg.png";
 import { PiShoppingCartBold } from "react-icons/pi";
 
-function NavBook({ toggleCart }) {
+function NavBook({ toggleCart, cartNotification }) {
   // State to toggle mobile navigation menu visibility
   const [nav, setNav] = useState(false);
 
@@ -12,7 +12,8 @@ function NavBook({ toggleCart }) {
   const [selectedOption, setSelectedOption] = useState("Financial");
 
   // State to store the selected dropdown option for the "Management" link
-  const [selectedManagementOption, setSelectedManagementOption] = useState("Management");
+  const [selectedManagementOption, setSelectedManagementOption] =
+    useState("Management");
 
   // React Router's location hook to track the current page URL
   const location = useLocation();
@@ -40,7 +41,7 @@ function NavBook({ toggleCart }) {
       setSelectedManagementOption("Management");
     }
   }, [location]);
-  
+
   // Function to handle dropdown option clicks for the "Financial" dropdown
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -68,7 +69,9 @@ function NavBook({ toggleCart }) {
           <li className="relative group">
             <span
               className={`p-2 text-xs md:text-sm lg:text-base cursor-pointer ${
-                isActive("/Ebooks/Financial") ? "text-[#F0AE4F]" : "text-gray-300"
+                isActive("/Ebooks/Financial")
+                  ? "text-[#F0AE4F]"
+                  : "text-gray-300"
               }`}
             >
               {selectedOption}
@@ -104,13 +107,14 @@ function NavBook({ toggleCart }) {
             </div>
           </li>
 
-         
           {/* Other navigation links */}
           <li className="relative group">
             <Link
               to="/Ebooks/Managerial"
               className={`p-2 text-xs md:text-sm lg:text-base ${
-                isActive("/Ebooks/Managerial") ? "text-[#F0AE4F]" : "text-gray-300"
+                isActive("/Ebooks/Managerial")
+                  ? "text-[#F0AE4F]"
+                  : "text-gray-300"
               }`}
             >
               Compliance
@@ -120,17 +124,21 @@ function NavBook({ toggleCart }) {
             <Link
               to="/Ebooks/Taxation"
               className={`p-2 text-xs md:text-sm lg:text-base ${
-                isActive("/Ebooks/Taxation") ? "text-[#F0AE4F]" : "text-gray-300"
+                isActive("/Ebooks/Taxation")
+                  ? "text-[#F0AE4F]"
+                  : "text-gray-300"
               }`}
             >
               Corporate Housekeeping
             </Link>
           </li>
-           {/* "Management" dropdown */}
-           <li className="relative group">
+          {/* "Management" dropdown */}
+          <li className="relative group">
             <span
               className={`p-2 text-xs md:text-sm lg:text-base cursor-pointer ${
-                isActive("/Ebooks/Auditing") ? "text-[#F0AE4F]" : "text-gray-300"
+                isActive("/Ebooks/Auditing")
+                  ? "text-[#F0AE4F]"
+                  : "text-gray-300"
               }`}
             >
               {selectedManagementOption}
@@ -154,7 +162,7 @@ function NavBook({ toggleCart }) {
                 onClick={() => handleManagementOptionClick(" Business ")}
                 className="block px-4 py-2 hover:bg-[#444444] hover:text-[#F0AE4F]"
               >
-                Business 
+                Business
               </Link>
               <Link
                 to="#"
@@ -165,16 +173,22 @@ function NavBook({ toggleCart }) {
               </Link>
             </div>
           </li>
-
         </ul>
 
         {/* Cart icon */}
-        <div className="xl:flex items-center space-x-5">
+        <div className="hidden xl:flex items-center space-x-5">
           <a
             onClick={toggleCart}
-            className="hover:text-gray-200 relative cursor-pointer"
+            className="hover:text-gray-200 relative"
+            href="#"
           >
             <PiShoppingCartBold className="h-6 w-6" />
+            {cartNotification && (
+              <span className="flex absolute -mt-5 ml-4">
+                <span className="animate-ping absolute h-3 w-3 rounded-full bg-[#F0AE4F] opacity-75"></span>
+                <span className="relative h-3 w-3 rounded-full bg-[#F0AE4F]"></span>
+              </span>
+            )}
           </a>
         </div>
 
@@ -197,16 +211,32 @@ function NavBook({ toggleCart }) {
             className="w-28 sm:w-32 md:w-36 lg:w-40 hover:scale-105 transition-all cursor-pointer m-4"
             alt="Nav Logo"
           />
-          <li className={`p-4 text-base border-b border-gray-600 ${isActive("/") ? "text-[#F0AE4F]" : "text-gray-300"}`}>
+          <li
+            className={`p-4 text-base border-b border-gray-600 ${
+              isActive("/") ? "text-[#F0AE4F]" : "text-gray-300"
+            }`}
+          >
             <Link to="#Financial">Financials</Link>
           </li>
-          <li className={`p-4 text-base border-b border-gray-600 ${isActive("/") ? "text-[#F0AE4F]" : "text-gray-300"}`}>
+          <li
+            className={`p-4 text-base border-b border-gray-600 ${
+              isActive("/") ? "text-[#F0AE4F]" : "text-gray-300"
+            }`}
+          >
             <Link to="/Managerial">Compliance</Link>
           </li>
-          <li className={`p-4 text-base border-b border-gray-600 ${isActive("/") ? "text-[#F0AE4F]" : "text-gray-300"}`}>
+          <li
+            className={`p-4 text-base border-b border-gray-600 ${
+              isActive("/") ? "text-[#F0AE4F]" : "text-gray-300"
+            }`}
+          >
             <Link to="/Taxation">Corporate Housekeeping</Link>
           </li>
-          <li className={`p-4 text-base border-b border-gray-600 ${isActive("/") ? "text-[#F0AE4F]" : "text-gray-300"}`}>
+          <li
+            className={`p-4 text-base border-b border-gray-600 ${
+              isActive("/") ? "text-[#F0AE4F]" : "text-gray-300"
+            }`}
+          >
             <Link to="/Auditing">Management</Link>
           </li>
         </ul>

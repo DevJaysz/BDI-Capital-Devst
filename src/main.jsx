@@ -19,13 +19,12 @@ import Policy from "./pages/Policy.jsx";
 import Terms from "./pages/Terms.jsx";
 import NavFooter from "./components/Ebooks/NavFooter.jsx";
 import NavBook from "./components/Ebooks/Navbook.jsx";
-import Cart from "./pages/Ebooks/LandingPage/Cart.jsx";
+import Cart from "./components/Ebooks/Cart.jsx";
 import Ebooks from "./pages/Ebooks/Ebooks.jsx";
 import Finance from "./pages/Ebooks/Finance.jsx";
 import Managerial from "./pages/Ebooks/Managerial.jsx";
 import Taxation from "./pages/Ebooks/Taxation.jsx";
 import Auditing from "./pages/Ebooks/Auditing.jsx";
-import Checkout from "./pages/Ebooks/LandingPage/Checkout.jsx";
 
 const Layout = () => {
   useEffect(() => {
@@ -55,15 +54,16 @@ const Layout = () => {
 const EbooksLayout = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]); // Cart items state
+  const [cartNotification, setCartNotification] = useState(false); // Notification state for cart
 
   const toggleCart = () => {
     setIsCartOpen((prev) => !prev);
   };
+
   const closeCart = () => {
     setIsCartOpen(false); // Close cart by setting the state to false
   };
 
-  // Add an item to the cart
   const addToCart = (product) => {
     setCartItems((prevItems) => {
       const existingProductIndex = prevItems.findIndex(
@@ -71,18 +71,15 @@ const EbooksLayout = () => {
       );
 
       if (existingProductIndex >= 0) {
-        // Product already exists, increase quantity
         const updatedItems = [...prevItems];
-        updatedItems[existingProductIndex].quantity += 1; // Increase quantity by 1
+        updatedItems[existingProductIndex].quantity += 1;
         return updatedItems;
       } else {
-        // Product does not exist, add it with quantity 1
         return [...prevItems, { ...product, quantity: 1 }];
       }
     });
   };
 
-  // Increase the quantity of a specific product
   const increaseQuantity = (productId) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -91,7 +88,6 @@ const EbooksLayout = () => {
     );
   };
 
-  // Decrease the quantity of a specific product
   const decreaseQuantity = (productId) => {
     setCartItems((prevItems) =>
       prevItems
@@ -100,37 +96,34 @@ const EbooksLayout = () => {
             ? { ...item, quantity: item.quantity - 1 }
             : item
         )
-        .filter((item) => item.quantity > 0) // Remove item if quantity becomes 0
+        .filter((item) => item.quantity > 0)
     );
   };
 
-  // Remove an item from the cart
   const removeFromCart = (productId) => {
-    console.log("Removing product with id:", productId); // Debugging output
     setCartItems((prevItems) =>
       prevItems.filter((item) => item.id !== productId)
     );
   };
 
+  // Update notification when cart items change
   useEffect(() => {
-    Aos.init(); // Initialize AOS animations on mount
-  }, []);
+    setCartNotification(cartItems.length > 0);
+  }, [cartItems]);
 
   return (
     <div>
-      <NavBook toggleCart={toggleCart} />
+      <NavBook toggleCart={toggleCart} cartNotification={cartNotification} />
       {isCartOpen && (
         <Cart
-          closeCart={closeCart} // Pass this function
-          cartItems={cartItems} // Pass this function
-          removeFromCart={removeFromCart} // Pass this function
-          increaseQuantity={increaseQuantity} // Pass this function
-          decreaseQuantity={decreaseQuantity} // Pass this function
+          closeCart={closeCart}
+          cartItems={cartItems}
+          removeFromCart={removeFromCart}
+          increaseQuantity={increaseQuantity}
+          decreaseQuantity={decreaseQuantity}
         />
       )}
-      {/* Render Cart if open and pass closeCart to Cart */}
       <Outlet context={{ addToCart, cartItems }} />
-      {/* Pass addToCart and cartItems to the child routes */}
       <NavFooter />
     </div>
   );
@@ -204,6 +197,14 @@ const router = createBrowserRouter([
       {
         path: "Auditing", // Relative path for /Ebooks/Financial
         element: <Auditing />,
+      },
+      {
+        path: "Auditing", // Relative path for /Ebooks/Financial
+        element: <Auditing />,
+      },
+      {
+        path: "Cart", // Relative path for /Ebooks/Financial
+        element: <Cart />,
       },
     ],
   },

@@ -48,7 +48,7 @@ function Headlines() {
         {slidesData.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="h-full md:h-[420px] bg-cover bg-center" // Set a height and use bg-cover for images
+              className="h-full md:h-[420px] lg:h-[380px] bg-cover bg-center" // Set a height and use bg-cover for images
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className="bg-black/50 h-full flex items-center">
