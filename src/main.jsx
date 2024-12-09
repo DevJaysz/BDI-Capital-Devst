@@ -21,10 +21,6 @@ import NavFooter from "./components/Ebooks/NavFooter.jsx";
 import NavBook from "./components/Ebooks/Navbook.jsx";
 import Cart from "./components/Ebooks/Cart.jsx";
 import Ebooks from "./pages/Ebooks/Ebooks.jsx";
-import Finance from "./pages/Ebooks/Finance.jsx";
-import Managerial from "./pages/Ebooks/Managerial.jsx";
-import Taxation from "./pages/Ebooks/Taxation.jsx";
-import Auditing from "./pages/Ebooks/Auditing.jsx";
 
 const Layout = () => {
   useEffect(() => {
@@ -181,26 +177,6 @@ const router = createBrowserRouter([
       {
         path: "", // Default child route for /Ebooks
         element: <Ebooks />,
-      },
-      {
-        path: "Finance", // Relative path for /Ebooks/Financial
-        element: <Finance />,
-      },
-      {
-        path: "Managerial", // Relative path for /Ebooks/Financial
-        element: <Managerial />,
-      },
-      {
-        path: "Taxation", // Relative path for /Ebooks/Financial
-        element: <Taxation />,
-      },
-      {
-        path: "Auditing", // Relative path for /Ebooks/Financial
-        element: <Auditing />,
-      },
-      {
-        path: "Auditing", // Relative path for /Ebooks/Financial
-        element: <Auditing />,
       },
       {
         path: "Cart", // Relative path for /Ebooks/Financial

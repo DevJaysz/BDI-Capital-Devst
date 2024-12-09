@@ -2,36 +2,29 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination"; // Pagination styles
-import Image1 from "../../../assets/images/HeadlinesSlider1.jpg";
-import Image2 from "../../../assets/images/HeadlinesSlider2.jpg";
-import Image3 from "../../../assets/images/HeadlinesSlider3.jpg";
-import Image4 from "../../../assets/images/HeadlinesSlider4.jpg";
+import Image1 from "../../../assets/images/eBookSlider1.png";
+import Image2 from "../../../assets/images/eBookSlider2.png";
+import Image3 from "../../../assets/images/eBookSlider3.png";
 
 function Headlines() {
   const slidesData = [
     {
       image: Image1,
-      heading: "Boost Your Business with Smarter Accounting",
-      description:
-        "Leverage advanced software and best practices to streamline your accounting processes. Unlock your potential by making informed decisions that drive productivity and success.",
-    },
-    {
-      image: Image2,
       heading: "Enhance Your Financial Performance",
       description:
         "Explore powerful tools that help you monitor cash flow, manage expenses, and maximize profit. Stay ahead of the competition with smarter financial strategies.",
     },
     {
-      image: Image3,
-      heading: "Achieve More with Real-time Insights",
+      image: Image2,
+      heading: "Optimized Your Taxes",
       description:
-        "Access detailed reports and real-time analytics that empower you to make informed decisions on the go. Stay updated with accurate, actionable data.",
+        "Maximize savings, improve your cash flow, and keep your business both profitable and competitive. Get your guide now!",
     },
     {
-      image: Image4,
-      heading: "Streamline Your Accounting Workflow",
+      image: Image3,
+      heading: "Learn the Basics of Corporate Finance",
       description:
-        "Experience seamless integration with your business operations, ensuring that accounting tasks are efficient and effortless.",
+        "Manage your capital, mitigate risks, grow and expand while making the right strategic decisions. The Basics of Corporate Finance is a must-read for all start-ups and entrepreneurs!",
     },
   ];
 
@@ -42,7 +35,7 @@ function Headlines() {
         spaceBetween={0}
         slidesPerView={1}
         loop={true}
-        autoplay={{ delay: 5000 }}
+        autoplay={{ delay: 7000 }}
         pagination={{ clickable: true }}
       >
         {slidesData.map((slide, index) => (
@@ -59,14 +52,6 @@ function Headlines() {
                   <p className="hidden max-w-lg text-white/90 md:block md:text-lg md:leading-relaxed">
                     {slide.description}
                   </p>
-                  <div className="flex justify-center">
-                    <a
-                      href="#"
-                      className="inline-block px-12 py-3 text-sm font-medium rounded-lg max-w-xs border text-gray-300 hover:bg-white hover:text-black transition duration-300 focus:outline-none focus:ring focus:ring-yellow-400"
-                    >
-                      Get Yours Today
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
