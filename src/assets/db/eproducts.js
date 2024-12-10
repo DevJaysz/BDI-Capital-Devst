@@ -11,7 +11,7 @@ import eBook8 from "/eCover/Mastering_Corp_Finance.png"
 import eBook9 from "/eCover/Tax_Optimization.png"
 import eBook10 from "/eCover/The_Basics_of_Corp_Gov.png"
 import eBook11 from "/eCover/Better_Business.png"
-import eBook12 from "/eCover/Mastering_Corp_Finance.png"
+import eBook12 from "/eCover/Wealth_Management.png"
 import eBook13 from "/eCover/101_Ideas.png"
 
 
@@ -84,7 +84,7 @@ const products = [
   {
     id: 8,
     is_free: false,
-    category: "Corporate Housekeeping",
+    category: "Finance",
     name: "Mastering Corporate Finance",
     author: "BDI Capital Ltd.",
     price: 10.00,
