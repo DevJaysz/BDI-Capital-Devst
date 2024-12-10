@@ -31,7 +31,7 @@ function Category({ onCategorySelect }) {
                   className={`flex items-center justify-between w-full py-2 px-3 rounded  md:hover:bg-transparent md:p-0 md:w-auto hover:text-[#F0AE4F] ${
                     activeCategory === "Financial"
                       ? "hover:text-[#F0AE4F] border-b-2 "
-                      : "text-gray-900 dark:text-white"
+                      : " dark:text-white"
                   }`}
                 >
                   Financial
@@ -67,7 +67,7 @@ function Category({ onCategorySelect }) {
                   className={`relative block py-2 px-3 rounded md:border-0 md:p-0 hover:text-[#F0AE4F] ${
                     activeCategory === "Compliance"
                       ? "text-[#F0AE4F] "
-                      : "dark:text-white"
+                      : "text-white"
                   }`}
                 >
                   Compliance
@@ -81,7 +81,7 @@ function Category({ onCategorySelect }) {
                   className={`block py-2 px-3 rounded  md:hover:bg-transparent md:border-0 md:p-0 hover:text-[#F0AE4F] ${
                     activeCategory === "Corporate Housekeeping"
                       ? "text-[#F0AE4F]  "
-                      : " dark:text-white"
+                      : " text-white"
                   }`}
                 >
                   Corporate Housekeeping
@@ -95,7 +95,7 @@ function Category({ onCategorySelect }) {
                   className={`flex items-center justify-between w-full py-2 px-3 rounded hover:text-[#F0AE4F] md:hover:bg-transparent md:p-0 md:w-auto${
                     activeCategory === "Management"
                       ? "text-[#F0AE4F]"
-                      : "text-gray-900 dark:text-white"
+                      : " text-white"
                   }`}
                 >
                   Management

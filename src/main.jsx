@@ -71,7 +71,7 @@ const EbooksLayout = () => {
         updatedItems[existingProductIndex].quantity += 1;
         return updatedItems;
       } else {
-        return [...prevItems, { ...product, quantity: 1 }];
+        return [...prevItems, { ...product, quantity: 1 }]; // Add product with initial quantity of 1
       }
     });
   };
@@ -85,26 +85,27 @@ const EbooksLayout = () => {
   };
 
   const decreaseQuantity = (productId) => {
-    setCartItems((prevItems) =>
-      prevItems
-        .map((item) =>
-          item.id === productId && item.quantity > 1
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        )
-        .filter((item) => item.quantity > 0)
+    setCartItems(
+      (prevItems) =>
+        prevItems
+          .map((item) =>
+            item.id === productId && item.quantity > 1
+              ? { ...item, quantity: item.quantity - 1 }
+              : item
+          )
+          .filter((item) => item.quantity > 0) // Remove items with quantity 0
     );
   };
 
   const removeFromCart = (productId) => {
-    setCartItems((prevItems) =>
-      prevItems.filter((item) => item.id !== productId)
+    setCartItems(
+      (prevItems) => prevItems.filter((item) => item.id !== productId) // Remove product by ID
     );
   };
 
   // Update notification when cart items change
   useEffect(() => {
-    setCartNotification(cartItems.length > 0);
+    setCartNotification(cartItems.length > 0); // Set notification if there are items in the cart
   }, [cartItems]);
 
   return (
@@ -119,7 +120,14 @@ const EbooksLayout = () => {
           decreaseQuantity={decreaseQuantity}
         />
       )}
-      <Outlet context={{ addToCart, cartItems }} />
+      <Outlet
+        context={{
+          addToCart, // Provide addToCart method
+          cartItems, // Pass current cart items
+          increaseQuantity, // Pass increase quantity function
+          decreaseQuantity, // Pass decrease quantity function
+        }}
+      />
       <NavFooter />
     </div>
   );

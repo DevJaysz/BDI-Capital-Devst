@@ -2,8 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import Lottie from "lottie-react";
 import freeIcon from "../../assets/Icons/FreeTag.json";
 
-function ProductModal({ product, isOpen, onClose, handleAddToCart, quantity }) {
-  const [productQuantity, setQuantity] = useState(quantity);
+function ProductModal({
+  product,
+  isOpen,
+  onClose,
+  handleAddToCart,
+  increaseQuantity,
+  decreaseQuantity,
+}) {
   const modalRef = useRef(null);
 
   // Close modal if the user clicks outside of it
@@ -23,20 +29,16 @@ function ProductModal({ product, isOpen, onClose, handleAddToCart, quantity }) {
     };
   }, [isOpen, onClose]);
 
-  const incrementQuantity = () => setQuantity((prev) => prev + 1);
-  const decrementQuantity = () =>
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
-
   if (!isOpen || !product) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
       <div
         ref={modalRef}
-        className="bg-white p-4 rounded-lg shadow-lg max-w-3xl w-full flex flex-col md:flex-row"
+        className=" bg-white p-8 rounded-lg shadow-lg max-w-3xl w-full flex flex-col md:flex-row"
       >
         {/* Left side with the product image */}
-        <div className="relative md:w-1/2 mb-4 md:mb-0">
+        <div className="relative md:w-1/2 mb-4 md:mb-0 p-4">
           <img
             src={product.image}
             alt={product.name}
@@ -50,7 +52,7 @@ function ProductModal({ product, isOpen, onClose, handleAddToCart, quantity }) {
         </div>
 
         {/* Right side with product details */}
-        <div className=" relative md:w-1/2 md:pl-6 flex flex-col justify-center">
+        <div className="relative md:w-1/2 md:pl-6 flex flex-col justify-center gap-2 p-4 ">
           <div className="flex items-center">
             <h2 className="text-xl font-bold text-primary mt-2">
               {product.name}
@@ -61,43 +63,40 @@ function ProductModal({ product, isOpen, onClose, handleAddToCart, quantity }) {
 
           <p className="mt-2 text-lg font-bold">${product.price}</p>
 
-          <p className="mt-4 text-gray-700">
-            These sneakers offer great comfort and durability. Ideal for all
-            casual wear enthusiasts!
+          <p className="mt-4 text-gray-700 text-xs text-justify">
+            {product.desc}
           </p>
 
-          <div className="flex mt-4 items-center">
+          {/* Counter */}
+          <div className="flex justify-between">
+            <div className="flex mt-4 items-center">
+              <button
+                onClick={() => decreaseQuantity(product.id)}
+                className="px-4 py-2 bg-gray-200 rounded-l-lg"
+              >
+                -
+              </button>
+              <p className="border border-gray-300 mx-2 w-12 text-center">
+                {product.quantity}
+              </p>
+              <button
+                onClick={() => increaseQuantity(product.id)}
+                className="px-4 py-2 bg-gray-200 rounded-r-lg"
+              >
+                +
+              </button>
+            </div>
+
             <button
-              onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))}
-              className="px-4 py-2 bg-gray-200 rounded-l-lg"
+              onClick={() => {
+                handleAddToCart(product, product.quantity); // Use parent-managed quantity
+                onClose();
+              }}
+              className="mt-4 bg-yellow-500 text-white py-2 px-4 rounded-lg"
             >
-              -
-            </button>
-            <input
-              type="number"
-              value={productQuantity}
-              min="1"
-              max="10"
-              className="border border-gray-300 mx-2 w-12 text-center rounded"
-              onChange={(e) => setQuantity(Number(e.target.value))}
-            />
-            <button
-              onClick={incrementQuantity}
-              className="px-4 py-2 bg-gray-200 rounded-r-lg"
-            >
-              +
+              Add to Cart
             </button>
           </div>
-
-          <button
-            onClick={() => {
-              handleAddToCart(product, productQuantity);
-              onClose();
-            }}
-            className="mt-4 bg-yellow-500 text-white py-2 px-4 rounded-lg"
-          >
-            Add to Cart
-          </button>
 
           {/* Close Button */}
           <button
