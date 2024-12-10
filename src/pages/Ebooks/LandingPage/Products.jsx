@@ -4,11 +4,12 @@ import { useOutletContext } from "react-router-dom";
 import Lottie from "lottie-react";
 
 import products from "../../../assets/db/eproducts";
-import freeIcon from "../../../assets/Icons/Animation - 1733753052878.json"; // Adjust the path
+import addedToCartAnimation from "../../../assets/Icons/AddedToCart.json";
+import freeIcon from "../../../assets/Icons/FreeTag.json"; // Adjust the path
 
 function Products({ selectedCategory }) {
   const { addToCart } = useOutletContext();
-  const [showAddToCartAnimation, setShowAddToCartAnimation] = useState(false);
+  const [showAddedToCart, setShowAddedToCart] = useState(false); // State to control animation visibility
 
   // Filter products based on selected category
   const filteredProducts =
@@ -18,15 +19,19 @@ function Products({ selectedCategory }) {
 
   const handleAddToCart = (product) => {
     addToCart(product);
-    setShowAddToCartAnimation(true);
-    setTimeout(() => setShowAddToCartAnimation(false), 1000);
+    setShowAddedToCart(true); // Show the "Added to Cart" animation
+    setTimeout(() => {
+      setShowAddedToCart(false); // Hide the animation after 3 seconds
+    }, 2000);
   };
-
   return (
     <div className="bg-white relative">
-      {showAddToCartAnimation && (
-        <div className="fixed bottom-5 left-5 animate-bounce p-3 bg-green-500 text-white rounded-full shadow-lg">
-          Item added to cart!
+      {/* Floating "Item added to cart" notification */}
+      {showAddedToCart && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center rounded-lg shadow-lg p-4 bg-black bg-opacity-50">
+          <div className="w-32 h-32">
+            <Lottie animationData={addedToCartAnimation} loop={false} />
+          </div>
         </div>
       )}
 

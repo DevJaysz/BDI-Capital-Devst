@@ -1,25 +1,39 @@
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
-import { FaShoppingCart } from "react-icons/fa"; // Importing the cart icon
+import { FaShoppingCart } from "react-icons/fa";
 import { RiArrowLeftWideFill, RiArrowRightWideFill } from "react-icons/ri";
-import products from "../../../assets/db/eproducts";
 import { useOutletContext } from "react-router-dom";
-import freeIcon from "../../../assets/Icons/Animation - 1733753052878.json"; // Adjust the path
+import freeIcon from "../../../assets/Icons/FreeTag.json";
+import addedToCartAnimation from "../../../assets/Icons/AddedToCart.json";
+import products from "../../../assets/db/eproducts"; // Importing the Lottie file for "added to cart"
 import Lottie from "lottie-react";
 
 function Recommended() {
   const { addToCart } = useOutletContext();
+  const [showAddedToCart, setShowAddedToCart] = useState(false); // State to control animation visibility
+
   const handleAddToCart = (product) => {
-    addToCart(product); // Add item to cart
+    addToCart(product);
+    setShowAddedToCart(true); // Show the "Added to Cart" animation
+    setTimeout(() => {
+      setShowAddedToCart(false); // Hide the animation after 3 seconds
+    }, 2000);
   };
 
   const freeProducts = products.filter((product) => product.is_free);
 
   return (
     <div className="bg-white relative">
-      {/* Floating "Item added" notification */}
-
+      {/* Floating "Item added to cart" notification */}
+      {showAddedToCart && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center rounded-lg shadow-lg p-4 bg-black bg-opacity-50">
+          <div className="w-32 h-32">
+            <Lottie animationData={addedToCartAnimation} loop={false} />
+          </div>
+        </div>
+      )}
       <div className="container mx-auto w-full px-4 py-4 lg:w-full lg:px-4">
         {/* Header Section */}
         <div className="flex justify-between items-center">
@@ -27,23 +41,23 @@ function Recommended() {
             Recommended for you!
           </h2>
         </div>
+
         <div className="relative">
           <Swiper
-            modules={[Navigation, Autoplay]} // Enables navigation and autoplay for the slider.
-            spaceBetween={20} // Spacing between slides.
-            slidesPerView={2} // Number of slides visible at once.
+            modules={[Navigation, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={2}
             breakpoints={{
-              640: { slidesPerView: 3 }, // For devices with a width >= 640px, show 3 slides.
-              1024: { slidesPerView: 5 }, // For devices with a width >= 1024px, show 5 slides.
+              640: { slidesPerView: 3 },
+              1024: { slidesPerView: 5 },
             }}
-            loop={true} // Enables looping through slides.
-            autoplay={{ delay: 3000, disableOnInteraction: false }} // Autoplay settings.
+            loop={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
             navigation={{
-              nextEl: ".swiper-button-next", // Custom next button.
-              prevEl: ".swiper-button-prev", // Custom previous button.
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
             }}
           >
-            {/* Mapping over free products to create slides */}
             {freeProducts.map((product) => (
               <SwiperSlide key={product.id}>
                 {/* Product Card */}
@@ -61,12 +75,14 @@ function Recommended() {
                     <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:opacity-100">
                       <div
                         className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white bg-[#F0AE4F]"
-                        onClick={() => handleAddToCart(product)} // Calls `handleAddToCart` when clicked.
+                        onClick={() => handleAddToCart(product)}
                       >
                         <FaShoppingCart className="text-white text-xl cursor-pointer" />
                       </div>
                     </div>
                   </div>
+
+                  {/* Product Details */}
                   <div>
                     <div className="mt-4 flex justify-between">
                       <div className="flex flex-col">
@@ -78,8 +94,7 @@ function Recommended() {
                         </p>
                       </div>
                       <p className="text-sm font-medium text-gray-900">
-                        ${product.price.toFixed(2)}{" "}
-                        {/* Formats the price to 2 decimal places. */}
+                        ${product.price.toFixed(2)}
                       </p>
                     </div>
                   </div>
