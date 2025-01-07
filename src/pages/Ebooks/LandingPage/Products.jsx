@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useOutletContext } from "react-router-dom";
 import Lottie from "lottie-react";
-
 import products from "../../../assets/db/eproducts";
 import addedToCartAnimation from "../../../assets/Icons/AddedToCart.json";
 import freeIcon from "../../../assets/Icons/FreeTag.json";

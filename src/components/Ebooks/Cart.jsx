@@ -16,19 +16,20 @@ function Cart({
     setLoading(true); // Set loading state to true
 
     const items = cartItems.map((item) => ({
+      id: item.id,
       name: item.name,
       description: item.author,
       price: item.price,
       quantity: item.quantity,
-      image: item.image, // Ensure this is passed to the backend
+      image: item.image,
+      pdf: item.pdf, // Pass the PDF file path for each item
     }));
 
     try {
-      // Adjust fetch URL based on environment (development or production)
       const response = await fetch(
         process.env.NODE_ENV === "development"
-          ? "http://localhost:4242/phpbackend/create-checkout-session.php" // Local backend for dev
-          : "/phpbackend/create-checkout-session.php", // Production backend
+          ? "http://localhost:4242/phpbackend/createCheckoutSession.php"
+          : "/phpbackend/createCheckoutSession.php",
         {
           method: "POST",
           headers: {
@@ -49,12 +50,11 @@ function Cart({
 
       const { id } = data;
 
-      // Ensure Stripe public key is loaded correctly
       const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
       const { error } = await stripe.redirectToCheckout({ sessionId: id });
 
       if (error) {
-        console.error("Error:", error);
+        console.error("Error during Stripe checkout:", error);
         alert(
           "There was an error during the checkout process. Please try again."
         );
